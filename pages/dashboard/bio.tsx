@@ -1,11 +1,12 @@
 import React from "react";
+import ProfilePicture from "../../components/ProfilePicture";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 const Bio = () => {
   return (
     <DashboardLayout>
-      <div className="">
-        <h1>BIOOOOOOOOOOOOOOOOOOO</h1>
+      <div className="w-full">
+        <ProfilePicture />
       </div>
     </DashboardLayout>
   );
