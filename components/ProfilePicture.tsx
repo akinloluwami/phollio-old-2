@@ -14,6 +14,16 @@ const ProfilePicture = () => {
           Remove
         </button>
       </div>
+      <div className="">
+        <div className="">
+          <p>Profile name</p>
+          <input type="text" placeholder="Display name" />
+        </div>
+        <div className="">
+          <p>Profile description</p>
+          <textarea placeholder="Bio" maxLength={300} />
+        </div>
+      </div>
     </div>
   );
 };
