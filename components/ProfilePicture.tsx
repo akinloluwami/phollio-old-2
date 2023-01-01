@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfilePicture = () => {
   return (
-    <div className="flex items-center gap-10 justify-between">
+    <div className="flex items-center gap-10 justify-between shadow px-5 py-6 mt-5">
       <div className="w-1/5">
         <div className="h-32 w-32 bg-accent rounded-full"></div>
       </div>
