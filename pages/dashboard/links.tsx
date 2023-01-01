@@ -1,4 +1,5 @@
 import React from "react";
+import AddNewLinkModal from "../../components/AddNewLinkModal";
 import LinkCard from "../../components/LinkCard";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
@@ -6,6 +7,8 @@ const Links = () => {
   return (
     <DashboardLayout>
       <div className="w-full">
+        <AddNewLinkModal />
+
         <button className="w-full h-10 bg-accent text-lg text-white my-2 font-bold">
           Add Link
         </button>
