@@ -52,7 +52,9 @@ const Signup = () => {
             {/**STEP 2 *************************************************************************/}
             {currentStep === 2 && (
               <>
-                <b onClick={() => setCurrentStep(1)}>back</b>
+                <b onClick={() => setCurrentStep(1)} className="cursor-pointer">
+                  back
+                </b>
 
                 <div className="mt-6 mb-1">
                   <p className="mb-2 text-lg">Choose a password</p>
