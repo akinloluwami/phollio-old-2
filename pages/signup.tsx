@@ -70,7 +70,10 @@ const Signup = () => {
                     placeholder="********************"
                   />
                 </div>
-                <button className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold">
+                <button
+                  className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold"
+                  onClick={() => setCurrentStep(2)}
+                >
                   Continue
                 </button>
               </>
