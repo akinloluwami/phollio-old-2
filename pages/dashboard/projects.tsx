@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NewProject from "../../components/NewProject";
 import ProjectCard from "../../components/ProjectCard";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
@@ -14,6 +15,7 @@ const Projects = () => {
         >
           {show ? "Close" : "Add New Project"}
         </button>
+        {show && <NewProject />}
         <div className="w-full">
           <ProjectCard />
           <ProjectCard />
