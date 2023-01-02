@@ -5,6 +5,7 @@ import { TfiBag } from "react-icons/tfi";
 import Link from "next/link";
 import { RiUserStarLine } from "react-icons/ri";
 import { useRouter } from "next/router";
+import NotVerified from "../components/NotVerified";
 
 const DashboardLayout = ({ children }: any) => {
   const pages = [
@@ -35,6 +36,7 @@ const DashboardLayout = ({ children }: any) => {
   return (
     <div>
       <DashboardTopbar />
+      <NotVerified />
       <div className="flex items-center justify-center  flex-col mx-auto max-w-xl mt-5">
         <div className="flex items-center justify-between w-full sticky top-0 bg-white z-50">
           {pages.map((page, _) => (
