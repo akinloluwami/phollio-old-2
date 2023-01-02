@@ -25,6 +25,9 @@ const Bio = () => {
             className="w-full h-32 py-2 pl-3 border-[1px] bg-gray-50"
           />
         </div>
+        <button className="w-full h-10 bg-accent text-white">
+          Save Changes
+        </button>
       </div>
     </DashboardLayout>
   );
