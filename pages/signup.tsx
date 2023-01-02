@@ -83,7 +83,9 @@ const Signup = () => {
             {/**STEP 3 *************************************************************************/}
             {currentStep === 3 && (
               <>
-                <b onClick={() => setCurrentStep(2)}>back</b>
+                <b onClick={() => setCurrentStep(2)} className="cursor-pointer">
+                  back
+                </b>
 
                 <div className="mt-6 mb-1">
                   <p className="mb-2 text-lg">What's your name?</p>
