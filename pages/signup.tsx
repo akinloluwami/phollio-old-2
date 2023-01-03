@@ -42,6 +42,7 @@ const Signup = () => {
                     type="text"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="example@mail.com"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="mt-6 mb-1">
@@ -50,6 +51,7 @@ const Signup = () => {
                     type="text"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="username"
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
                 <button
@@ -73,6 +75,7 @@ const Signup = () => {
                     type="password"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="********************"
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="mt-6 mb-1">
@@ -81,6 +84,7 @@ const Signup = () => {
                     type="confirm password"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="********************"
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </div>
                 <button
