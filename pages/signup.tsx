@@ -16,6 +16,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+
   return (
     <>
       <AuthTopbar
@@ -113,6 +114,7 @@ const Signup = () => {
                     type="confirm password"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="your name"
+                    onChange={(e) => setDisplayName(e.target.value)}
                   />
                 </div>
                 <button className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold">
