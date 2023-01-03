@@ -69,6 +69,7 @@ const Signup = () => {
                   />
                 </div>
                 <button
+                  disabled={!usernameChecked || !emailChecked}
                   className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold disabled:opacity-80 disabled:cursor-not-allowed"
                   onClick={() => setCurrentStep(2)}
                 >
