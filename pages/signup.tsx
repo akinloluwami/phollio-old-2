@@ -25,6 +25,13 @@ const Signup = () => {
       <AuthLayout>
         <div className="w-1/3 mx-auto pb-4">
           <h1 className="text-4xl font-bold text-center">Sign up</h1>
+          <button
+            onClick={() => {
+              console.log({ email, password, confirmPassword, username });
+            }}
+          >
+            Check
+          </button>
           <div className="w-full mt-7">
             {currentStep === 1 && (
               <>
