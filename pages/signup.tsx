@@ -11,6 +11,8 @@ const Signup = () => {
   3. display name
   */
   const [currentStep, setCurrentStep] = useState(1);
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   return (
     <>
       <AuthTopbar
