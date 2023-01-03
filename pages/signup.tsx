@@ -16,6 +16,7 @@ const Signup = () => {
   const [displayName, setDisplayName] = useState("");
 
   const [emailChecked, setEmailChecked] = useState(false);
+  const [usernameChecked, setUsernameChecked] = useState(false);
 
   const checkEmail = () => {
     fetchData("/auth/check-email", { email: "atatat" }).then((data) => {
