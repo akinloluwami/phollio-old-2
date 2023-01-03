@@ -15,6 +15,8 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
 
+  const [emailChecked, setEmailChecked] = useState(false);
+
   const checkEmail = () => {
     fetchData("/auth/check-email", { email: "atatat" }).then((data) => {
       console.log(data.response.data);
