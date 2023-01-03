@@ -4,6 +4,7 @@ import GitHubButton from "../components/GitHubButton";
 import Or from "../components/Or";
 import AuthLayout from "../layouts/AuthLayout";
 import { useState } from "react";
+import { fetchData } from "../utils/requests";
 const Signup = () => {
   /*
   1. Username and email
@@ -16,6 +17,23 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+
+  const checkEmail = () => {
+    // fetchData("/auth/check-email", { email }).then((data) => {
+    //   console.log(data);
+    // });
+    console.log(email);
+  };
+
+  let timer: any;
+  const run = () => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+      checkEmail();
+    }, 500);
+  };
 
   return (
     <>
@@ -44,7 +62,10 @@ const Signup = () => {
                     type="text"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="example@mail.com"
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      debouncedCheckEmail();
+                    }}
                     value={email}
                   />
                 </div>
