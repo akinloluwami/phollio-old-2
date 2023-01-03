@@ -3,16 +3,11 @@ import AuthTopbar from "../components/AuthTopbar";
 import GitHubButton from "../components/GitHubButton";
 import Or from "../components/Or";
 import AuthLayout from "../layouts/AuthLayout";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchData } from "../utils/requests";
 import { debounce } from "lodash";
 
 const Signup = () => {
-  /*
-  1. Username and email
-  2. Password
-  3. display name
-  */
   const [currentStep, setCurrentStep] = useState(1);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -20,17 +15,21 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
 
-  const checkEmail = (email: any) => {
-    setEmail(email);
-    // fetchData("/auth/check-email", { email }).then((data) => {
-    // console.log(data);
-    // });
+  const checkEmail = () => {
+    fetchData("/auth/check-email", { email: "atatat" }).then((data) => {
+      console.log(data.response.data);
+    });
     console.log(email);
   };
 
-  const debouncedCheckEmail = debounce(() => {
-    checkEmail(email);
-  }, 500);
+  const debouncedCheckEmail = debounce((e) => {
+    setEmail(e.target.value);
+    checkEmail();
+  }, 1500);
+
+  useEffect(() => {
+    checkEmail();
+  }, []);
 
   return (
     <>
@@ -52,11 +51,8 @@ const Signup = () => {
                     type="text"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="example@mail.com"
-                    onChange={(e) => {
-                      checkEmail(e.target.value);
-                      debouncedCheckEmail();
-                    }}
-                    value={email}
+                    onChange={debouncedCheckEmail}
+                    // value={email}
                   />
                 </div>
                 <div className="mt-6 mb-1">
