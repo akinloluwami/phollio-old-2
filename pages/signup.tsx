@@ -15,6 +15,7 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [displayName, setDisplayName] = useState("");
   return (
     <>
       <AuthTopbar
@@ -86,7 +87,7 @@ const Signup = () => {
                   <input
                     type="confirm password"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
-                    placeholder="********************"
+                    placeholder="******************"
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     value={confirmPassword}
                   />
