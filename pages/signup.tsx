@@ -249,6 +249,16 @@ const Signup = () => {
                     placeholder="your name"
                     onChange={(e) => setDisplayName(e.target.value)}
                   />
+                  {displayName && displayName.length < 4 && (
+                    <div className="flex items-center text-red-500 my-2">
+                      <p className="text-xl">
+                        <IoCloseCircleOutline />
+                      </p>
+                      <small>
+                        Display name should be at least 4 characters long
+                      </small>
+                    </div>
+                  )}
                 </div>
                 <button
                   className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold disabled:cursor-not-allowed disabled:opacity-50"
@@ -258,7 +268,8 @@ const Signup = () => {
                     !password ||
                     !confirmPassword ||
                     password !== confirmPassword ||
-                    !displayName
+                    !displayName ||
+                    displayName.length < 4
                   }
                 >
                   Complete Signup
