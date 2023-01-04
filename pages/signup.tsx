@@ -229,7 +229,7 @@ const Signup = () => {
                         <p className="text-xl">
                           <IoCloseCircleOutline />
                         </p>
-                        <small>Passwords not not match</small>
+                        <small>Passwords do not match</small>
                       </div>
                     )}
                 </div>
