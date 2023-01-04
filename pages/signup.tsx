@@ -295,12 +295,19 @@ const Signup = () => {
             {currentStep === 4 && (
               <>
                 <div className="">
-                  <img src="https://img.icons8.com/cute-clipart/64/null/confetti.png" />
-                  <h1>Account created succefully</h1>
-                  <p>
+                  <div className="flex items-center justify-center my-3">
+                    <img src="https://img.icons8.com/cute-clipart/64/null/confetti.png" />
+                  </div>
+                  <h1 className="text-center text-4xl font-bold text-accent">
+                    Account created succefully
+                  </h1>
+                  <p className="text-center my-4 text-2xl">
                     A link to verify your account has been sent to your email.
                   </p>
-                  <Link href={"/dashboard/links"}>
+                  <Link
+                    href={"/dashboard/links"}
+                    className="flex items-center justify-center"
+                  >
                     <button className="bg-accent text-white px-3 py-2">
                       Continue to Dashboard
                     </button>
