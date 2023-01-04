@@ -70,7 +70,7 @@ const Signup = () => {
     checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
 
-  const handleLogin = () => {
+  const handleSignup = () => {
     const payload = {
       username,
       email,
