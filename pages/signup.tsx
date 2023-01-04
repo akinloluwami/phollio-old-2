@@ -25,7 +25,7 @@ const Signup = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [usernameCheckMsg, setUsernameCheckMsg] = useState("");
 
-  const checkEmail = () => {
+  const checkEmail = (email: any) => {
     setIsCheckingEmail(true);
     const payload = { email };
     fetchData("/auth/check-email", payload).then((data) => {
@@ -43,11 +43,11 @@ const Signup = () => {
   };
 
   const debouncedCheckEmail = debounce((e) => {
-    setEmail(e.target.value);
-    checkEmail();
+    setEmail(e.target.value.toLowerCase().trim());
+    checkEmail(e.target.value.toLowerCase().trim());
   }, 500);
 
-  const checkUsename = () => {
+  const checkUsename = (username: any) => {
     setIsCheckingUsername(true);
     const payload = { username };
     fetchData("/auth/check-username", payload).then((data) => {
@@ -65,14 +65,9 @@ const Signup = () => {
   };
 
   const debouncedCheckUsername = debounce((e) => {
-    setUsername(e.target.value);
-    checkUsename();
+    setUsername(e.target.value.toLowerCase().trim());
+    checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
-
-  useEffect(() => {
-    checkEmail();
-    checkUsename();
-  }, []);
 
   return (
     <>
@@ -95,7 +90,7 @@ const Signup = () => {
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="example@mail.com"
                     onChange={debouncedCheckEmail}
-                    value={email}
+                    // value={email}
                   />
                   {isCheckingEmail && (
                     <div className="flex items-center text-accent my-2">
@@ -105,7 +100,7 @@ const Signup = () => {
                       <small>Checking...</small>
                     </div>
                   )}
-                  {!emailAvaibable && (
+                  {!emailAvaibable && email && (
                     <div className="flex items-center text-red-500 my-2">
                       <p className="text-xl">
                         <IoCloseCircleOutline />
@@ -129,7 +124,7 @@ const Signup = () => {
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="username"
                     onChange={debouncedCheckUsername}
-                    value={username}
+                    // value={username}
                   />
                   {isCheckingUsername && (
                     <div className="flex items-center text-accent my-2">
@@ -139,7 +134,7 @@ const Signup = () => {
                       <small>Checking...</small>
                     </div>
                   )}
-                  {!usernameAvaibable && (
+                  {!usernameAvaibable && username && (
                     <div className="flex items-center text-red-500 my-2">
                       <p className="text-xl">
                         <IoCloseCircleOutline />
