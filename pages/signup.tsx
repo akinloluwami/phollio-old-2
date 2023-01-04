@@ -17,18 +17,23 @@ const Signup = () => {
 
   const [emailChecked, setEmailChecked] = useState(false);
   const [usernameChecked, setUsernameChecked] = useState(false);
+  const [isCheckingEmail, setIsCheckingEmail] = useState(false);
+  const [emailCheckMsg, setEmailCheckMsg] = useState("");
 
   const checkEmail = () => {
-    fetchData("/auth/check-email", { email: "atatat" }).then((data) => {
-      console.log(data.response.data);
+    setIsCheckingEmail(true);
+    const payload = { email };
+    fetchData("/auth/check-email", payload).then((data) => {
+      const res = data.response;
+      console.log(res);
+      setIsCheckingEmail(false);
     });
-    console.log(email);
   };
 
   const debouncedCheckEmail = debounce((e) => {
     setEmail(e.target.value);
     checkEmail();
-  }, 1500);
+  }, 500);
 
   useEffect(() => {
     checkEmail();
@@ -57,6 +62,7 @@ const Signup = () => {
                     onChange={debouncedCheckEmail}
                     // value={email}
                   />
+                  {isCheckingEmail && <small>I'm checking...</small>}
                 </div>
                 <div className="mt-6 mb-1">
                   <p className="mb-2 text-lg">Choose a username</p>
