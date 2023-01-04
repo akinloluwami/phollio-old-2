@@ -184,6 +184,18 @@ const Signup = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                   />
+                  {password &&
+                    password.length < 6 &&
+                    password !== confirmPassword && (
+                      <div className="flex items-center text-red-500 my-2">
+                        <p className="text-xl">
+                          <IoCloseCircleOutline />
+                        </p>
+                        <small>
+                          Password should be at least 6 characters long
+                        </small>
+                      </div>
+                    )}
                 </div>
                 <div className="mt-6 mb-1">
                   <p className="mb-2 text-lg">Confirm password</p>
@@ -194,10 +206,26 @@ const Signup = () => {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     value={confirmPassword}
                   />
+
+                  {password &&
+                    confirmPassword &&
+                    password !== confirmPassword && (
+                      <div className="flex items-center text-red-500 my-2">
+                        <p className="text-xl">
+                          <IoCloseCircleOutline />
+                        </p>
+                        <small>Passwords not not match</small>
+                      </div>
+                    )}
                 </div>
                 <button
-                  className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold"
+                  className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold disabled:cursor-not-allowed disabled:opacity-50"
                   onClick={() => setCurrentStep(3)}
+                  disabled={
+                    !password ||
+                    !confirmPassword ||
+                    password !== confirmPassword
+                  }
                 >
                   Continue
                 </button>
