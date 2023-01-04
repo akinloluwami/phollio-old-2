@@ -80,6 +80,9 @@ const Signup = () => {
     };
     postData("/auth/signup", payload).then((data) => {
       console.log(data);
+      if (data.status === 201) {
+        setCurrentStep(4);
+      }
     });
   };
 
@@ -92,10 +95,9 @@ const Signup = () => {
       />
       <AuthLayout>
         <div className="w-1/3 mx-auto pb-4">
-          <h1 className="text-4xl font-bold text-center">Sign up</h1>
-          {/* <button onClick={() => console.log({ email, username })}>
-            check
-          </button> */}
+          {currentStep !== 4 && (
+            <h1 className="text-4xl font-bold text-center">Sign up</h1>
+          )}
           <div className="w-full mt-7">
             {currentStep === 1 && (
               <>
@@ -290,9 +292,24 @@ const Signup = () => {
                 </button>
               </>
             )}
+            {currentStep === 4 && (
+              <>
+                <div className="">
+                  <h1>Account created succefully</h1>
+                  <p>
+                    A link to verify your account has been sent to your email.
+                  </p>
+                  <Link href={"/dashboard/links"}>
+                    <button className="bg-accent text-white px-3 py-2">
+                      Continue to Dashboard
+                    </button>
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
-          <Or />
-          <GitHubButton />
+          {currentStep !== 4 && <Or />}
+          {currentStep !== 4 && <GitHubButton />}
         </div>
       </AuthLayout>
     </>
