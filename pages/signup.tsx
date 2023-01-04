@@ -250,7 +250,7 @@ const Signup = () => {
                     onChange={(e) => setDisplayName(e.target.value)}
                   />
                 </div>
-                <button className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold">
+                <button className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold disabled:cursor-not-allowed disabled:opacity-50">
                   Complete Signup
                 </button>
               </>
