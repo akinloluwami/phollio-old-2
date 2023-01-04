@@ -200,7 +200,7 @@ const Signup = () => {
                 <div className="mt-6 mb-1">
                   <p className="mb-2 text-lg">Confirm password</p>
                   <input
-                    type="confirm password"
+                    type="password"
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="******************"
                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -234,10 +234,13 @@ const Signup = () => {
             {/**STEP 3 *************************************************************************/}
             {currentStep === 3 && (
               <>
-                <b onClick={() => setCurrentStep(2)} className="cursor-pointer">
+                <b
+                  onClick={() => setCurrentStep(2)}
+                  className="cursor-pointer flex items-center gap-1"
+                >
+                  <MdArrowBack />
                   back
                 </b>
-
                 <div className="mt-6 mb-1">
                   <p className="mb-2 text-lg">What's your name?</p>
                   <input
