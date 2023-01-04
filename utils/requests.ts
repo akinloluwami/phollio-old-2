@@ -26,7 +26,9 @@ const fetchData = async (
   configurations?: any
 ): Promise<any> => {
   try {
-    const response = await axios.get(`${defaultUrl}${url}`, payload);
+    const response = await axios.get(`${defaultUrl}${url}`, {
+      params: payload,
+    });
     return response;
   } catch (error: any) {
     const err = error.response;
