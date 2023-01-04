@@ -4,7 +4,7 @@ import GitHubButton from "../components/GitHubButton";
 import Or from "../components/Or";
 import AuthLayout from "../layouts/AuthLayout";
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../utils/requests";
+import { fetchData, postData } from "../utils/requests";
 import { debounce } from "lodash";
 import { BsCheckAll } from "react-icons/bs";
 import { IoCloseCircleOutline } from "react-icons/io5";
@@ -69,6 +69,19 @@ const Signup = () => {
     setUsername(e.target.value.toLowerCase().trim());
     checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
+
+  const handleLogin = () => {
+    const payload = {
+      username,
+      email,
+      password,
+      confirmPassword,
+      displayName,
+    };
+    postData("/auth/signup", payload).then((data) => {
+      console.log(data);
+    });
+  };
 
   return (
     <>
