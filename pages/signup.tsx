@@ -295,6 +295,7 @@ const Signup = () => {
             {currentStep === 4 && (
               <>
                 <div className="">
+                  <img src="https://img.icons8.com/cute-clipart/64/null/confetti.png" />
                   <h1>Account created succefully</h1>
                   <p>
                     A link to verify your account has been sent to your email.
