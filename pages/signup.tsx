@@ -284,6 +284,7 @@ const Signup = () => {
                     !displayName ||
                     displayName.length < 4
                   }
+                  onClick={handleSignup}
                 >
                   Complete Signup
                 </button>
