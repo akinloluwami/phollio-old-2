@@ -9,6 +9,7 @@ import { debounce } from "lodash";
 import { BsCheckAll } from "react-icons/bs";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { RiLoader3Fill } from "react-icons/ri";
+import { MdArrowBack } from "react-icons/md";
 
 const Signup = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -79,6 +80,9 @@ const Signup = () => {
       <AuthLayout>
         <div className="w-1/3 mx-auto pb-4">
           <h1 className="text-4xl font-bold text-center">Sign up</h1>
+          {/* <button onClick={() => console.log({ email, username })}>
+            check
+          </button> */}
           <div className="w-full mt-7">
             {currentStep === 1 && (
               <>
@@ -90,7 +94,7 @@ const Signup = () => {
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="example@mail.com"
                     onChange={debouncedCheckEmail}
-                    // value={email}
+                    defaultValue={email}
                   />
                   {isCheckingEmail && (
                     <div className="flex items-center text-accent my-2">
@@ -124,7 +128,7 @@ const Signup = () => {
                     className="w-full bg-blue-50 pl-3 text-lg py-3"
                     placeholder="username"
                     onChange={debouncedCheckUsername}
-                    // value={username}
+                    defaultValue={username}
                   />
                   {isCheckingUsername && (
                     <div className="flex items-center text-accent my-2">
@@ -163,7 +167,11 @@ const Signup = () => {
             {/**STEP 2 *************************************************************************/}
             {currentStep === 2 && (
               <>
-                <b onClick={() => setCurrentStep(1)} className="cursor-pointer">
+                <b
+                  onClick={() => setCurrentStep(1)}
+                  className="cursor-pointer flex items-center gap-1"
+                >
+                  <MdArrowBack />
                   back
                 </b>
 
