@@ -29,6 +29,7 @@ const Signup = () => {
 
   const getUsernameFromUrl = () => {
     const router = useRouter();
+    console.log(router);
   };
 
   const checkEmail = (email: any) => {
