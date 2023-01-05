@@ -30,7 +30,6 @@ const Signup = () => {
   const router = useRouter();
 
   const getUsernameFromUrl = () => {
-    console.log(router?.query?.username);
     setUsername((router?.query?.username as string) || "");
   };
 
