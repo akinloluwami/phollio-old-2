@@ -36,7 +36,7 @@ const Signup = () => {
 
   useEffect(() => {
     getUsernameFromUrl();
-  }, []);
+  }, [router]);
 
   const checkEmail = (email: any) => {
     setIsCheckingEmail(true);
