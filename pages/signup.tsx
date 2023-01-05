@@ -27,8 +27,9 @@ const Signup = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [usernameCheckMsg, setUsernameCheckMsg] = useState("");
 
+  const router = useRouter();
+
   const getUsernameFromUrl = () => {
-    const router = useRouter();
     console.log(router);
   };
 
