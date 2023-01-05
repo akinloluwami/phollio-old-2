@@ -26,6 +26,8 @@ const Signup = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [usernameCheckMsg, setUsernameCheckMsg] = useState("");
 
+  const getUsernameFromUrl = () => {};
+
   const checkEmail = (email: any) => {
     setIsCheckingEmail(true);
     const payload = { email };
