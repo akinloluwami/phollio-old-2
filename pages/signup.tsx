@@ -63,7 +63,6 @@ const Signup = () => {
     const payload = { username };
     fetchData("/auth/check-username", payload).then((data) => {
       const res = data;
-      console.log(res);
       if (res.status !== 200) {
         setUsernameAvailable(false);
         setUsernameCheckMsg(res.data.message);
