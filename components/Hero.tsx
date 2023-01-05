@@ -3,9 +3,39 @@ import React from "react";
 import { AiOutlineCaretRight } from "react-icons/ai";
 import { Typewriter } from "react-simple-typewriter";
 import { useState } from "react";
+import { fetchData } from "../utils/requests";
+import { debounce } from "lodash";
+import { RiLoader3Fill } from "react-icons/ri";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { BsCheckAll } from "react-icons/bs";
 
 const Hero = () => {
   const [username, setUsername] = useState("");
+  const [usernameAvaibable, setUsernameAvailable] = useState(false);
+  const [isCheckingUsername, setIsCheckingUsername] = useState(false);
+  const [usernameCheckMsg, setUsernameCheckMsg] = useState("");
+
+  const checkUsename = (username: any) => {
+    setIsCheckingUsername(true);
+    const payload = { username };
+    fetchData("/auth/check-username", payload).then((data) => {
+      const res = data;
+      console.log(res);
+      if (res.status !== 200) {
+        setUsernameAvailable(false);
+        setUsernameCheckMsg(res.data.message);
+      } else {
+        setUsernameAvailable(true);
+        setUsernameCheckMsg(res.data.message);
+      }
+      setIsCheckingUsername(false);
+    });
+  };
+
+  const debouncedCheckUsername = debounce((e) => {
+    setUsername(e.target.value.toLowerCase().trim());
+    checkUsename(e.target.value.toLowerCase().trim());
+  }, 500);
   return (
     <div className="bg-accent h-screen w-screen text-white">
       <div className="px-20 flex justify-between py-8 items-center">
@@ -57,7 +87,7 @@ const Hero = () => {
           placeholder="yourname"
           className="outline-none font-semibold"
           spellCheck={"false"}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={debouncedCheckUsername}
         />
         <Link href={`/signup?username=${username}`}>
           <button className="bg-black text-white py-4 px-3 flex items-center">
@@ -65,6 +95,32 @@ const Hero = () => {
             <AiOutlineCaretRight />
           </button>
         </Link>
+      </div>
+      <div className="w-2/5 mx-auto">
+        {isCheckingUsername && (
+          <div className="flex items-center text-accent my-2">
+            <p className="text-xl animate-spin">
+              <RiLoader3Fill />
+            </p>
+            <small>Checking...</small>
+          </div>
+        )}
+        {!usernameAvaibable && username && (
+          <div className="flex items-center text-red-500 my-2">
+            <p className="text-xl">
+              <IoCloseCircleOutline />
+            </p>
+            <small>{usernameCheckMsg}</small>
+          </div>
+        )}
+        {usernameAvaibable && (
+          <div className="flex items-center text-green-500 my-2">
+            <p className="text-xl">
+              <BsCheckAll />
+            </p>
+            <small>{usernameCheckMsg}</small>
+          </div>
+        )}
       </div>
     </div>
   );
