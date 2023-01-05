@@ -90,7 +90,10 @@ const Hero = () => {
           onChange={debouncedCheckUsername}
         />
         <Link href={`/signup?username=${username}`}>
-          <button className="bg-black text-white py-4 px-3 flex items-center">
+          <button
+            className="bg-black text-white py-4 px-3 flex items-center disabled:opacity-50"
+            disabled={username !== "" && !usernameAvaibable}
+          >
             Start your page
             <AiOutlineCaretRight />
           </button>
