@@ -95,6 +95,12 @@ const Signup = () => {
     });
   };
 
+  useEffect(() => {
+    if (username !== "") {
+      checkUsename(username);
+    }
+  }, [username]);
+
   return (
     <>
       <AuthTopbar
