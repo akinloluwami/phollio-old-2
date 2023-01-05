@@ -31,7 +31,6 @@ const Signup = () => {
     const payload = { email };
     fetchData("/auth/check-email", payload).then((data) => {
       const res = data;
-      console.log(res);
       if (res.status !== 200) {
         setEmailAvailable(false);
         setEmailCheckMsg(res.data.message);
