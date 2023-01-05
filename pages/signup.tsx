@@ -30,7 +30,7 @@ const Signup = () => {
   const router = useRouter();
 
   const getUsernameFromUrl = () => {
-    console.log(router);
+    console.log(router.query.username);
   };
 
   useEffect(() => {
