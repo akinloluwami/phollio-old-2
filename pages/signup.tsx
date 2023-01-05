@@ -10,6 +10,7 @@ import { BsCheckAll } from "react-icons/bs";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { RiLoader3Fill } from "react-icons/ri";
 import { MdArrowBack } from "react-icons/md";
+import { useRouter } from "next/router";
 
 const Signup = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -26,7 +27,9 @@ const Signup = () => {
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [usernameCheckMsg, setUsernameCheckMsg] = useState("");
 
-  const getUsernameFromUrl = () => {};
+  const getUsernameFromUrl = () => {
+    const router = useRouter();
+  };
 
   const checkEmail = (email: any) => {
     setIsCheckingEmail(true);
