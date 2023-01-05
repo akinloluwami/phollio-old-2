@@ -79,7 +79,6 @@ const Signup = () => {
       displayName,
     };
     postData("/auth/signup", payload).then((data) => {
-      console.log(data);
       if (data.status === 201) {
         setCurrentStep(4);
       }
