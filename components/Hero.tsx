@@ -96,7 +96,7 @@ const Hero = () => {
           </button>
         </Link>
       </div>
-      <div className="w-2/5 mx-auto">
+      <div className="w-fit px-3 mx-auto bg-gray-800">
         {isCheckingUsername && (
           <div className="flex items-center text-accent my-2">
             <p className="text-xl animate-spin">
