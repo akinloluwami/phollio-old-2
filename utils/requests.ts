@@ -29,7 +29,6 @@ const fetchData = async (
     const response = await axios.get(`${defaultUrl}${url}`, {
       params: payload,
     });
-    console.log(response);
     return response;
   } catch (error: any) {
     const response = error.response;
