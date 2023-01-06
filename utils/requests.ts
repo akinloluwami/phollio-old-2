@@ -23,11 +23,13 @@ const postData = async (
 const fetchData = async (
   url?: string,
   payload?: any,
+  headers?: any,
   configurations?: any
 ): Promise<any> => {
   try {
     const response = await axios.get(`${defaultUrl}${url}`, {
-      params: payload,
+      params: payload || {},
+      headers: headers || {},
     });
     return response;
   } catch (error: any) {
