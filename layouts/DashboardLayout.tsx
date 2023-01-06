@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { BiCodeCurly, BiLink } from "react-icons/bi";
 import DashboardTopbar from "../components/DashboardTopbar";
 import { TfiBag } from "react-icons/tfi";
@@ -6,6 +6,9 @@ import Link from "next/link";
 import { RiUserStarLine } from "react-icons/ri";
 import { useRouter } from "next/router";
 import NotVerified from "../components/NotVerified";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../contexts/store";
+import { fetchUserData } from "../contexts/userSlice";
 
 const DashboardLayout = ({ children }: any) => {
   const pages = [
@@ -33,10 +36,19 @@ const DashboardLayout = ({ children }: any) => {
 
   const router = useRouter();
 
+  const dispatch = useDispatch();
+  const { token, username, isEmailVerified } = useSelector(
+    (state: RootState) => state.user
+  );
+
+  useEffect(() => {
+    dispatch(fetchUserData());
+  }, [dispatch]);
+
   return (
     <div>
-      <DashboardTopbar />
-      <NotVerified />
+      <DashboardTopbar username={username} />
+      {!isEmailVerified && <NotVerified />}
       <div className="flex items-center justify-center  flex-col mx-auto max-w-xl mt-5">
         <div className="flex items-center justify-between w-full sticky top-0 bg-white z-50">
           {pages.map((page, _) => (
