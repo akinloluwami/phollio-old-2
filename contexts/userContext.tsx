@@ -11,34 +11,25 @@ interface UserContext {
   username: string;
   email: string;
   token: string;
+  isEmailVerified: boolean;
 }
 
 const UserContext = createContext<UserContext | null>(null);
 
 const UserProvider = ({ children }: any) => {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("zing");
   const [email, setEmail] = useState("");
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
   const [token, setToken] = useState("");
 
-  //   useEffect(() => {
-  //     async function fetchData() {
-  //       const response = await axios.get("/api/user");
-  //       const data = response.data;
-  //       setUsername(data.username);
-  //       setEmail(data.email);
-  //       setToken(data.token);
-  //     }
-  //     fetchData();
-  //   }, []);
-
   return (
-    <UserContext.Provider value={{ username, email, token }}>
+    <UserContext.Provider value={{ username, email, token, isEmailVerified }}>
       {children}
     </UserContext.Provider>
   );
 };
 
-const useUser = () => {
+const useUser: any = () => {
   const context = useContext(UserContext);
   if (context === undefined) {
     throw new Error("useUser must be used within a UserProvider");
