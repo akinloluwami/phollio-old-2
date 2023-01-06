@@ -15,7 +15,7 @@ interface UserContext {
 
 const UserContext = createContext<UserContext | null>(null);
 
-const UserProvider: FC<React.ReactNode> = ({ children }: any) => {
+const UserProvider = ({ children }: any) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
