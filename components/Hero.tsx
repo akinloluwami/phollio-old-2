@@ -107,7 +107,7 @@ const Hero = () => {
             <small>Checking...</small>
           </div>
         )}
-        {!usernameAvaibable && username && (
+        {!usernameAvaibable && !isCheckingUsername && username && (
           <div className="flex items-center text-red-500 my-2">
             <p className="text-xl">
               <IoCloseCircleOutline />
@@ -115,7 +115,7 @@ const Hero = () => {
             <small>{usernameCheckMsg}</small>
           </div>
         )}
-        {usernameAvaibable && (
+        {usernameAvaibable && !isCheckingUsername && (
           <div className="flex items-center text-green-500 my-2">
             <p className="text-xl">
               <BsCheckAll />
