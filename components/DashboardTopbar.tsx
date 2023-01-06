@@ -4,7 +4,7 @@ import { RiShareLine } from "react-icons/ri";
 import { IoAnalyticsSharp } from "react-icons/io5";
 import Share from "./Share";
 
-const DashboardTopbar = () => {
+const DashboardTopbar = ({ username }: any) => {
   return (
     <div className="px-20 py-8 flex items-center justify-between">
       <div className="">
@@ -28,7 +28,7 @@ const DashboardTopbar = () => {
             />
           </div>
           <div className="flex items-center">
-            <h1 className="">akinkunmi</h1>
+            <h1 className="">{username}</h1>
             <b className="text-2xl">
               <BiChevronDown />
             </b>
