@@ -24,7 +24,13 @@ const UserProvider = ({ children }: any) => {
   const [token, setToken] = useState("");
 
   const getBasicInfo = () => {
-    fetchData("/profile/basic-info").then((data) => {
+    fetchData(
+      "/profile/basic-info",
+      {},
+      {
+        Authorization: `Bearer ${token}`,
+      }
+    ).then((data) => {
       console.log(data);
     });
   };
@@ -33,7 +39,7 @@ const UserProvider = ({ children }: any) => {
     const token = localStorage.getItem("tkn");
     setToken(token as string);
     getBasicInfo();
-  }, []);
+  }, [token]);
 
   return (
     <UserContext.Provider value={{ username, email, token, isEmailVerified }}>
