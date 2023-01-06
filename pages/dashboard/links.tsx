@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddNewLinkComp from "../../components/AddNewLinkComp";
 import LinkCard from "../../components/LinkCard";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 const Links = () => {
   const [show, setShow] = useState(false);
+
   return (
     <DashboardLayout>
       <div className="w-full">
