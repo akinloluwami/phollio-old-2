@@ -20,16 +20,16 @@ const UserProvider: FC<React.ReactNode> = ({ children }: any) => {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await axios.get("/api/user");
-      const data = response.data;
-      setUsername(data.username);
-      setEmail(data.email);
-      setToken(data.token);
-    }
-    fetchData();
-  }, []);
+  //   useEffect(() => {
+  //     async function fetchData() {
+  //       const response = await axios.get("/api/user");
+  //       const data = response.data;
+  //       setUsername(data.username);
+  //       setEmail(data.email);
+  //       setToken(data.token);
+  //     }
+  //     fetchData();
+  //   }, []);
 
   return (
     <UserContext.Provider value={{ username, email, token }}>
