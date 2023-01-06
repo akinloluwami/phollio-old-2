@@ -31,7 +31,9 @@ const UserProvider = ({ children }: any) => {
         Authorization: `Bearer ${token}`,
       }
     ).then((data) => {
-      console.log(data);
+      setUsername(data.data.username);
+      setEmail(data.data.email);
+      setIsEmailVerified(data.data.isEmailVerified);
     });
   };
 
