@@ -9,6 +9,7 @@ import NotVerified from "../components/NotVerified";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../contexts/store";
 import { fetchUserData } from "../contexts/userSlice";
+import { UserProvider, useUser } from "../contexts/userContext";
 
 const DashboardLayout = ({ children }: any) => {
   const pages = [
@@ -35,16 +36,7 @@ const DashboardLayout = ({ children }: any) => {
   ];
 
   const router = useRouter();
-
-  const dispatch = useDispatch();
-  const { token, username, isEmailVerified } = useSelector(
-    (state: RootState) => state.user
-  );
-
-  useEffect(() => {
-    dispatch(fetchUserData());
-  }, [dispatch]);
-
+  const { username, email, token, isEmailVerified } = useUser();
   return (
     <div>
       <DashboardTopbar username={username} />
