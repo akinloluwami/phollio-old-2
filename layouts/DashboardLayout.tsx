@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BiCodeCurly, BiLink } from "react-icons/bi";
 import DashboardTopbar from "../components/DashboardTopbar";
 import { TfiBag } from "react-icons/tfi";
@@ -6,10 +5,7 @@ import Link from "next/link";
 import { RiUserStarLine } from "react-icons/ri";
 import { useRouter } from "next/router";
 import NotVerified from "../components/NotVerified";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../contexts/store";
-import { fetchUserData } from "../contexts/userSlice";
-import { UserProvider, useUser } from "../contexts/userContext";
+import { useUser } from "../contexts/userContext";
 
 const DashboardLayout = ({ children }: any) => {
   const pages = [
