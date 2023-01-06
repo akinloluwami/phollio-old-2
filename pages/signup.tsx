@@ -45,6 +45,7 @@ const Signup = () => {
       if (res.status !== 200) {
         setEmailAvailable(false);
         setEmailCheckMsg(res.data.message);
+        localStorage.setItem("tkn", res.data.token);
       } else {
         setEmailAvailable(true);
         setEmailCheckMsg(res.data.message);
