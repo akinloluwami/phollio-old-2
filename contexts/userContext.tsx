@@ -17,10 +17,15 @@ interface UserContext {
 const UserContext = createContext<UserContext | null>(null);
 
 const UserProvider = ({ children }: any) => {
-  const [username, setUsername] = useState("zing");
+  const [username, setUsername] = useState("akinkunmi");
   const [email, setEmail] = useState("");
   const [isEmailVerified, setIsEmailVerified] = useState(false);
   const [token, setToken] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem("tkn");
+    setToken(token as string);
+  }, []);
 
   return (
     <UserContext.Provider value={{ username, email, token, isEmailVerified }}>
