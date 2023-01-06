@@ -6,6 +6,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { fetchData } from "../utils/requests";
 
 interface UserContext {
   username: string;
@@ -22,9 +23,16 @@ const UserProvider = ({ children }: any) => {
   const [isEmailVerified, setIsEmailVerified] = useState(false);
   const [token, setToken] = useState("");
 
+  const getBasicInfo = () => {
+    fetchData("/profile/basic-info").then((data) => {
+      console.log(data);
+    });
+  };
+
   useEffect(() => {
     const token = localStorage.getItem("tkn");
     setToken(token as string);
+    getBasicInfo();
   }, []);
 
   return (
