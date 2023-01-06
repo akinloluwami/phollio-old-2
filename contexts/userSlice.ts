@@ -8,13 +8,14 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  token: "11111111111111111",
-  username: "prdfhjkoiytgbnkiuytrfghjitfgh",
+  token: window.localStorage.getItem("tkn") as string,
+  username: "zing",
   isEmailVerified: false,
 };
 
 export const fetchUserData = createAsyncThunk("user/fetchData", async () => {
   const response = await axios.get<UserState>("/api/user");
+  console.log(response);
   return response.data;
 });
 
