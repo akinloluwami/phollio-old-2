@@ -36,7 +36,11 @@ const Bio = () => {
         </div>
         <button
           className="w-full h-10 bg-accent text-white"
-          disabled={!displayNameSt}
+          disabled={
+            !displayNameSt ||
+            displayNameSt.length < 4 ||
+            displayNameSt.length > 15
+          }
         >
           Save Changes
         </button>
