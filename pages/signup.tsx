@@ -90,6 +90,7 @@ const Signup = () => {
     postData("/auth/signup", payload).then((data) => {
       if (data.status === 201) {
         setCurrentStep(4);
+        console.log(data);
         localStorage.setItem("tkn", data.data.token);
       }
     });
