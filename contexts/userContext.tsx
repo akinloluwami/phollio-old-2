@@ -13,6 +13,7 @@ interface UserContext {
   email: string;
   token: string;
   isEmailVerified: boolean;
+  displayName: string;
 }
 
 const UserContext = createContext<UserContext | null>(null);
