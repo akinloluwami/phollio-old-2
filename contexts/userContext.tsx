@@ -29,6 +29,7 @@ const UserProvider = ({ children }: any) => {
       setUsername(data.data.username);
       setEmail(data.data.email);
       setIsEmailVerified(data.data.isEmailVerified);
+      setDisplayName(data.data.displayName);
     });
   };
 
