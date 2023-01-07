@@ -18,9 +18,9 @@ interface UserContext {
 const UserContext = createContext<UserContext | null>(null);
 
 const UserProvider = ({ children }: any) => {
-  const [username, setUsername] = useState("akinkunmi");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [isEmailVerified, setIsEmailVerified] = useState(true);
   const [token, setToken] = useState("");
 
   const getBasicInfo = () => {
