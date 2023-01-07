@@ -22,6 +22,7 @@ const UserProvider = ({ children }: any) => {
   const [email, setEmail] = useState("");
   const [isEmailVerified, setIsEmailVerified] = useState(true);
   const [token, setToken] = useState("");
+  const [displayName, setDisplayName] = useState("");
 
   const getBasicInfo = () => {
     fetchData(
