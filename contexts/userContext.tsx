@@ -31,6 +31,7 @@ const UserProvider = ({ children }: any) => {
         Authorization: `Bearer ${token}`,
       }
     ).then((data) => {
+      console.log(data);
       setUsername(data.data.username);
       setEmail(data.data.email);
       setIsEmailVerified(data.data.isEmailVerified);
@@ -40,6 +41,9 @@ const UserProvider = ({ children }: any) => {
   useEffect(() => {
     const token = localStorage.getItem("tkn");
     setToken(token as string);
+  }, []);
+
+  useEffect(() => {
     getBasicInfo();
   }, [token]);
 
