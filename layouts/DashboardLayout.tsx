@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }: any) => {
   ];
 
   const router = useRouter();
-  const { username, email, token, isEmailVerified } = useUser();
+  const { username, email, isEmailVerified } = useUser();
   return (
     <div>
       <DashboardTopbar username={username} />
