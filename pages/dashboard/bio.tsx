@@ -1,10 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import ProfilePicture from "../../components/ProfilePicture";
 import { useUser } from "../../contexts/userContext";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 const Bio = () => {
   const { displayName } = useUser();
+  const [displayNameSt, setDisplayNameSt] = useState("");
+
+  useEffect(() => {
+    setDisplayNameSt(displayName);
+  }, [displayName]);
 
   return (
     <DashboardLayout>
@@ -18,7 +23,7 @@ const Bio = () => {
             type="text"
             placeholder="Display name"
             className="w-full h-10 pl-3 border-[1px] bg-gray-50"
-            defaultValue={displayName}
+            defaultValue={displayNameSt}
           />
         </div>
         <div className="my-2">
