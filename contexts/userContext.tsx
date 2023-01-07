@@ -1,11 +1,4 @@
-import axios from "axios";
-import React, {
-  createContext,
-  FC,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, FC, useContext, useEffect, useState } from "react";
 import { fetchData } from "../utils/requests";
 
 interface UserContext {
