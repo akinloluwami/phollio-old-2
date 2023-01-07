@@ -48,7 +48,9 @@ const UserProvider = ({ children }: any) => {
   }, [token]);
 
   return (
-    <UserContext.Provider value={{ username, email, token, isEmailVerified }}>
+    <UserContext.Provider
+      value={{ username, email, token, isEmailVerified, displayName }}
+    >
       {children}
     </UserContext.Provider>
   );
