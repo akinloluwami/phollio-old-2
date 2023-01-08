@@ -9,6 +9,7 @@ import { postData } from "../utils/requests";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
     const payload = { username, password };
