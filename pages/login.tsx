@@ -12,6 +12,9 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+
   const handleLogin = () => {
     setLoading(true);
     const payload = { username, password };
@@ -20,6 +23,9 @@ const Login = () => {
       if (data.status !== 200) {
         setError(true);
         setErrorMsg(data.data.message);
+      } else {
+        setSuccess(true);
+        setSuccessMsg(data.data.message);
       }
       console.log(data);
     });
