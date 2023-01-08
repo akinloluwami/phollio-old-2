@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 import AuthTopbar from "../components/AuthTopbar";
 import GitHubButton from "../components/GitHubButton";
@@ -5,6 +6,9 @@ import Or from "../components/Or";
 import AuthLayout from "../layouts/AuthLayout";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <>
       <AuthTopbar href="signup" hrefText="Sign up" question="New to YouPage?" />
