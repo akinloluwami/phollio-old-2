@@ -10,12 +10,15 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [error, setError] = useState(false);
   const handleLogin = () => {
     setLoading(true);
     const payload = { username, password };
-    postData("/auth/login", { payload }).then((data) => {
+    postData("/auth/login", payload).then((data) => {
       setLoading(false);
+      if (data.status !== 200) {
+        setError(true);
+      }
       console.log(data);
     });
   };
@@ -56,7 +59,7 @@ const Login = () => {
             <button
               className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
               onClick={handleLogin}
-              disabled={!username || !password || !loading}
+              disabled={!username || !password || loading}
             >
               Login
             </button>
