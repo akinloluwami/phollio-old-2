@@ -12,6 +12,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = () => {
+    setLoading(true);
     const payload = { username, password };
     postData("/auth/login", { payload }).then((data) => {
       console.log(data);
