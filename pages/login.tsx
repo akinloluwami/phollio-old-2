@@ -54,7 +54,7 @@ const Login = () => {
             </Link>
 
             <button
-              className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold"
+              className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
               onClick={handleLogin}
               disabled={!username || !password || !loading}
             >
