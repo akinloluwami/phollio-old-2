@@ -5,6 +5,7 @@ import GitHubButton from "../components/GitHubButton";
 import Or from "../components/Or";
 import AuthLayout from "../layouts/AuthLayout";
 import { postData } from "../utils/requests";
+import { useRouter } from "next/router";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
-
+  const router = useRouter();
   const handleLogin = () => {
     setLoading(true);
     const payload = { username, password };
@@ -27,6 +28,9 @@ const Login = () => {
         setSuccess(true);
         setSuccessMsg(data.data.message);
         localStorage.setItem("tkn", data.data.token);
+        setTimeout(() => {
+          router.push("/dashboard/links");
+        }, 400);
       }
     });
   };
