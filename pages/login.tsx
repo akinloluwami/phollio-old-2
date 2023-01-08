@@ -22,6 +22,7 @@ const Login = () => {
                 type="text"
                 className="w-full bg-blue-50 pl-3 text-lg py-3"
                 placeholder="Your username"
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="mt-6 mb-1">
