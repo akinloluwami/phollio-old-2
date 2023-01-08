@@ -26,8 +26,8 @@ const Login = () => {
       } else {
         setSuccess(true);
         setSuccessMsg(data.data.message);
+        localStorage.setItem("tkn", data.data.token);
       }
-      console.log(data);
     });
   };
 
@@ -39,6 +39,9 @@ const Login = () => {
           <h1 className="text-4xl font-bold text-center">Login</h1>
           {error && !loading && (
             <p className="text-red-500 text-center my-5">{errorMsg}</p>
+          )}
+          {success && !loading && (
+            <p className="text-green-500 text-center my-5">{successMsg}</p>
           )}
           <div className="w-full">
             <div className="mt-8 mb-1">
