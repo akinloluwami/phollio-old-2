@@ -37,8 +37,9 @@ const Login = () => {
       <AuthLayout>
         <div className="w-1/3 mx-auto">
           <h1 className="text-4xl font-bold text-center">Login</h1>
-          <div className="w-full mt-7">
-            <div className="mt-6 mb-1">
+          <p className="text-center mt-4">Error message</p>
+          <div className="w-full">
+            <div className="mt-2 mb-1">
               <p className="mb-2 text-lg">What's your username?</p>
               <input
                 type="text"
