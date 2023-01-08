@@ -50,7 +50,10 @@ const Login = () => {
               Forgot password?
             </Link>
 
-            <button className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold">
+            <button
+              className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold"
+              onClick={handleLogin}
+            >
               Login
             </button>
           </div>
