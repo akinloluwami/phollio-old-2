@@ -53,7 +53,7 @@ const Login = () => {
             <div className="mt-6 mb-1">
               <p className="mb-2 text-lg">Shhhh....it's a secret</p>
               <input
-                type="text"
+                type="password"
                 className="w-full bg-blue-50 pl-3 text-lg py-3"
                 placeholder="Your password"
                 onChange={(e) => setPassword(e.target.value)}
