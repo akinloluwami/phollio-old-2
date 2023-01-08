@@ -31,6 +31,7 @@ const Login = () => {
                 type="text"
                 className="w-full bg-blue-50 pl-3 text-lg py-3"
                 placeholder="Your password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
 
