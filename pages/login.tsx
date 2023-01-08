@@ -53,6 +53,7 @@ const Login = () => {
             <button
               className="w-full bg-accent pl-3 text-lg py-3 text-white mt-8 font-bold"
               onClick={handleLogin}
+              disabled={!username || !password || !loading}
             >
               Login
             </button>
