@@ -15,6 +15,7 @@ const Login = () => {
     setLoading(true);
     const payload = { username, password };
     postData("/auth/login", { payload }).then((data) => {
+      setLoading(false);
       console.log(data);
     });
   };
