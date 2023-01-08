@@ -4,10 +4,18 @@ import AuthTopbar from "../components/AuthTopbar";
 import GitHubButton from "../components/GitHubButton";
 import Or from "../components/Or";
 import AuthLayout from "../layouts/AuthLayout";
+import { postData } from "../utils/requests";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    const payload = { username, password };
+    postData("/auth/login", { payload }).then((data) => {
+      console.log(data);
+    });
+  };
 
   return (
     <>
