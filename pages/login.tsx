@@ -37,9 +37,11 @@ const Login = () => {
       <AuthLayout>
         <div className="w-1/3 mx-auto">
           <h1 className="text-4xl font-bold text-center">Login</h1>
-          {error && <p className="text-red-500 text-center my-5">{errorMsg}</p>}
+          {error && !loading && (
+            <p className="text-red-500 text-center my-5">{errorMsg}</p>
+          )}
           <div className="w-full">
-            <div className="mt-2 mb-1">
+            <div className="mt-8 mb-1">
               <p className="mb-2 text-lg">What's your username?</p>
               <input
                 type="text"
