@@ -41,7 +41,7 @@ const Login = () => {
       <AuthLayout>
         <div className="w-1/3 mx-auto">
           <h1 className="text-4xl font-bold text-center">Login</h1>
-          {error && !loading && (
+          {error && !loading && !success && (
             <p className="text-red-500 text-center my-5">{errorMsg}</p>
           )}
           {success && !loading && (
