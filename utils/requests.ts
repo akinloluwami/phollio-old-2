@@ -37,13 +37,19 @@ const fetchData = async (
   }
 };
 
-const deleteData = async (url: string, payload: any): Promise<any> => {
+const deleteData = async (
+  url: string,
+  payload?: any,
+  headers?: any
+): Promise<any> => {
   try {
-    const response = await axios.delete(`${defaultUrl}${url}`, payload);
+    const response = await axios.post(`${defaultUrl}${url}`, {
+      params: payload,
+      headers: headers || {},
+    });
     return response;
   } catch (error: any) {
-    const err = error.response;
-    return error;
+    return error.response;
   }
 };
 
