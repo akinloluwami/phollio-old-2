@@ -3,6 +3,7 @@ import AddNewLinkComp from "../../components/AddNewLinkComp";
 import LinkCard from "../../components/LinkCard";
 import { useUser } from "../../contexts/userContext";
 import DashboardLayout from "../../layouts/DashboardLayout";
+import LinkProps from "../../types/link";
 import { fetchData } from "../../utils/requests";
 
 const Links = () => {
@@ -48,7 +49,7 @@ const Links = () => {
               </p>
             </div>
           ) : (
-            links.map((link) => (
+            links.map((link: LinkProps) => (
               <LinkCard
                 key={link.id}
                 title={link.title}
