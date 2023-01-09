@@ -6,14 +6,13 @@ let defaultUrl: string = "http://localhost:2004";
 const postData = async (
   url: string,
   payload?: any,
+  headers?: any,
   configurations?: any
 ): Promise<any> => {
   try {
-    const response = await axios.post(
-      `${defaultUrl}${url}`,
-      payload,
-      configurations
-    );
+    const response = await axios.post(`${defaultUrl}${url}`, payload, {
+      headers: headers || {},
+    });
     return response;
   } catch (error: any) {
     return error.response;
