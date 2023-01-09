@@ -41,9 +41,11 @@ const Links = () => {
         {show && <AddNewLinkComp />}
         <div className="w-full">
           {links.length < 1 ? (
-            <div className="">
-              <h1>No links</h1>
-              <p>Click the button above to add your first link</p>
+            <div className="my-3">
+              <h1 className="font-semibold text-center text-3xl">No links</h1>
+              <p className="text-center">
+                Click the button above to add your first link
+              </p>
             </div>
           ) : (
             links.map((link) => (
