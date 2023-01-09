@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const AddNewLinkComp = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
