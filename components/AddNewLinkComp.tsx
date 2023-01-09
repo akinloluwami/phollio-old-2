@@ -22,7 +22,7 @@ const AddNewLinkComp = () => {
     }).then((data) => {
       console.log(data);
       setLoading(false);
-      if (data.status !== 200) {
+      if (data.status !== 201) {
         setError(true);
         setErrorMsg(data.data.message || data.data.error);
       } else {
