@@ -3,6 +3,7 @@ import { useState } from "react";
 const AddNewLinkComp = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+
   return (
     <div className="h-44 w-full pt-3 my-5 bg-gray-100">
       <div className="px-5">
@@ -25,7 +26,10 @@ const AddNewLinkComp = () => {
           />
         </div>
       </div>
-      <button className="w-full h-10 bg-gray-300 text-accent hover:text-white hover:bg-accent transition-colors">
+      <button
+        className="w-full h-10 bg-gray-300 text-accent hover:text-white hover:bg-accent transition-colors"
+        disabled={!title || !url || loading}
+      >
         Save
       </button>
     </div>
