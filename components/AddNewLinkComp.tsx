@@ -10,6 +10,7 @@ const AddNewLinkComp = () => {
 
   const handleSubmit = () => {
     setLoading(true);
+    const payload = { title, url };
   };
 
   return (
