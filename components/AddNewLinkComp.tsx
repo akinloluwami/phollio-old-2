@@ -1,5 +1,3 @@
-import React from "react";
-
 const AddNewLinkComp = () => {
   return (
     <div className="h-44 w-full pt-3 my-5 bg-gray-100">
