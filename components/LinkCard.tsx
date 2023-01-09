@@ -14,9 +14,7 @@ const LinkCard = ({ title, url, impressions, clicks, isOn, id }: any) => {
       {
         Authorization: `Bearer ${token}`,
       }
-    ).then((data) => {
-      console.log(data);
-    });
+    );
   };
   return (
     <div className="w-full px-4 bg-white shadow-sm py-5 my-10 flex items-center justify-between">
