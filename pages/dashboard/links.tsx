@@ -40,14 +40,21 @@ const Links = () => {
         </button>
         {show && <AddNewLinkComp />}
         <div className="w-full">
-          {links.map((link) => (
-            <LinkCard
-              title={link.title}
-              url={link.url}
-              impressions={link.impressions}
-              clicks={link.clicks}
-            />
-          ))}
+          {links.length < 1 ? (
+            <div className="">
+              <h1>No links</h1>
+              <p>Click the button above to add your first link</p>
+            </div>
+          ) : (
+            links.map((link) => (
+              <LinkCard
+                title={link.title}
+                url={link.url}
+                impressions={link.impressions}
+                clicks={link.clicks}
+              />
+            ))
+          )}
         </div>
       </div>
     </DashboardLayout>
