@@ -52,6 +52,7 @@ const Links = () => {
             links.map((link: LinkProps) => (
               <LinkCard
                 key={link.id}
+                id={link.id}
                 title={link.title}
                 url={link.url}
                 impressions={link.impressions}
