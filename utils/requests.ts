@@ -43,7 +43,7 @@ const deleteData = async (
   headers?: any
 ): Promise<any> => {
   try {
-    const response = await axios.post(`${defaultUrl}${url}`, {
+    const response = await axios.delete(`${defaultUrl}${url}`, {
       params: payload,
       headers: headers || {},
     });
