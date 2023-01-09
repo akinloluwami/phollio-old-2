@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useUser } from "../contexts/userContext";
+import { postData } from "../utils/requests";
 
 const AddNewLinkComp = () => {
   const [title, setTitle] = useState("");
@@ -15,10 +16,29 @@ const AddNewLinkComp = () => {
   const handleSubmit = () => {
     setLoading(true);
     const payload = { title, url };
+
+    postData("link", payload, {
+      Authorization: `Bearer ${token}`,
+    }).then((data) => {
+      setLoading(false);
+      if (data.status !== 200) {
+        setError(true);
+        setErrorMsg(data.data.message);
+      } else {
+        setSuccess(true);
+        setSuccessMsg(data.data.message);
+      }
+    });
   };
 
   return (
     <div className="h-44 w-full pt-3 my-5 bg-gray-100">
+      {error && !loading && !success && (
+        <p className="text-red-500 text-center my-5">{errorMsg}</p>
+      )}
+      {success && !loading && (
+        <p className="text-green-500 text-center my-5">{successMsg}</p>
+      )}
       <div className="px-5">
         <div className="my-3">
           <p>Link title</p>
