@@ -9,7 +9,7 @@ const Links = () => {
   const [show, setShow] = useState(false);
   const [links, setLinks] = useState([]);
   const { token } = useUser();
-
+  const [errorMsg, setErrorMsg] = useState("");
   const getLinks = () => {
     fetchData(
       "/link",
@@ -18,7 +18,12 @@ const Links = () => {
         Authorization: `Bearer ${token}`,
       }
     ).then((data) => {
-      setLinks(data.data.link);
+      console.log(data.data);
+      if (data.status !== 200) {
+        setErrorMsg(data.data.message);
+      } else {
+        // setLinks(data.data.links);
+      }
     });
   };
 
@@ -36,13 +41,14 @@ const Links = () => {
         </button>
         {show && <AddNewLinkComp />}
         <div className="w-full">
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
-          <LinkCard />
+          {links.map((link) => (
+            <LinkCard
+              title={link.title}
+              url={link.url}
+              impressions={link.impressions}
+              clicks={link.clicks}
+            />
+          ))}
         </div>
       </div>
     </DashboardLayout>
