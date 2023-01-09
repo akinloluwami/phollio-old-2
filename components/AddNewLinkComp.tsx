@@ -37,9 +37,11 @@ const AddNewLinkComp = () => {
       {error && !loading && !success && (
         <p className="text-red-500 text-center my-5">{errorMsg}</p>
       )}
+
       {success && !loading && (
         <p className="text-green-500 text-center my-5">{successMsg}</p>
       )}
+
       <div className="h-44 w-full pt-3 my-5 bg-gray-100">
         <div className="px-5">
           <div className="my-3">
