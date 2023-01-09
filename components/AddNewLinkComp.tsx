@@ -28,6 +28,8 @@ const AddNewLinkComp = () => {
       } else {
         setSuccess(true);
         setSuccessMsg(data.data.message);
+        setTitle("");
+        setUrl("");
       }
     });
   };
