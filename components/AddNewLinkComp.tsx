@@ -1,4 +1,6 @@
 const AddNewLinkComp = () => {
+  const [title, setTitle] = useState("");
+  const [url, setUrl] = useState("");
   return (
     <div className="h-44 w-full pt-3 my-5 bg-gray-100">
       <div className="px-5">
