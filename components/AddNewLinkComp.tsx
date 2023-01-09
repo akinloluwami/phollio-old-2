@@ -3,6 +3,7 @@ import { useState } from "react";
 const AddNewLinkComp = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="h-44 w-full pt-3 my-5 bg-gray-100">
