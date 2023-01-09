@@ -4,6 +4,7 @@ interface LinkProps {
   url: String;
   impressions: Number;
   clicks: Number;
+  isOn: Boolean;
 }
 
 export default LinkProps;
