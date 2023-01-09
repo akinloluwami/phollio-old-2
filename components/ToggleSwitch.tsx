@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-const ToggleSwitch = ({ isOn }: { isOn: Boolean }) => {
+const ToggleSwitch = ({
+  isOn,
+  ToggleLink,
+}: {
+  isOn: Boolean;
+  ToggleLink: any;
+}) => {
   const [isChecked, setIsChecked] = useState(isOn);
 
   return (
@@ -8,7 +14,10 @@ const ToggleSwitch = ({ isOn }: { isOn: Boolean }) => {
       className={`h-5 rounded-full w-10 ${
         isChecked ? "bg-accent" : "bg-gray-200"
       } px-[0.5px] transition-colors cursor-pointer`}
-      onClick={() => setIsChecked(!isChecked)}
+      onClick={() => {
+        setIsChecked(!isChecked);
+        ToggleLink();
+      }}
     >
       <div
         className={`h-5 w-5 bg-white transition-all shadow-md rounded-full ${
