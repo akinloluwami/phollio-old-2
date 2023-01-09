@@ -1,11 +1,31 @@
 import { useState, useEffect } from "react";
 import AddNewLinkComp from "../../components/AddNewLinkComp";
 import LinkCard from "../../components/LinkCard";
+import { useUser } from "../../contexts/userContext";
 import DashboardLayout from "../../layouts/DashboardLayout";
+import { fetchData } from "../../utils/requests";
 
 const Links = () => {
   const [show, setShow] = useState(false);
+  const [links, setLinks] = useState([]);
+  const { token } = useUser();
 
+  const getLinks = () => {
+    fetchData(
+      "/link",
+      {},
+      {
+        Authorization: `Bearer ${token}`,
+      }
+    ).then((data) => {
+      setLinks(data.data.link);
+      console.log(data.data.links);
+    });
+  };
+
+  useEffect(() => {
+    getLinks();
+  }, [token]);
   return (
     <DashboardLayout>
       <div className="w-full">
