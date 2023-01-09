@@ -32,6 +32,7 @@ const AddNewLinkComp = () => {
       <button
         className="w-full h-10 bg-gray-300 text-accent hover:text-white hover:bg-accent transition-colors"
         disabled={!title || !url || loading}
+        onClick={handleSubmit}
       >
         Save
       </button>
