@@ -18,7 +18,6 @@ const Links = () => {
         Authorization: `Bearer ${token}`,
       }
     ).then((data) => {
-      console.log(data.data);
       if (data.status !== 200) {
         setErrorMsg(data.data.message);
       } else {
