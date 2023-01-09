@@ -1,4 +1,5 @@
 interface LinkProps {
+  id?: String;
   title: String;
   url: String;
   impressions: Number;
