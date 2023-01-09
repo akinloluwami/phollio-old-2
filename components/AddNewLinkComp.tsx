@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useUser } from "../contexts/userContext";
 
 const AddNewLinkComp = () => {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { token } = useUser();
 
   const handleSubmit = () => {
     setLoading(true);
