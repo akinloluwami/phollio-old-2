@@ -5,6 +5,8 @@ const AddNewLinkComp = () => {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const handleSubmit = () => {};
+
   return (
     <div className="h-44 w-full pt-3 my-5 bg-gray-100">
       <div className="px-5">
