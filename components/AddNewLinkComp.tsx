@@ -12,6 +12,7 @@ const AddNewLinkComp = () => {
             type="text"
             placeholder="My Twitter"
             className="w-full h-10 pl-3"
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="my-3">
@@ -20,6 +21,7 @@ const AddNewLinkComp = () => {
             type="text"
             className="w-full h-10 pl-3"
             placeholder="https://twitter.com/xing0x"
+            onChange={(e) => setUrl(e.target.value)}
           />
         </div>
       </div>
