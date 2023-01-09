@@ -22,7 +22,7 @@ const Links = () => {
       if (data.status !== 200) {
         setErrorMsg(data.data.message);
       } else {
-        // setLinks(data.data.links);
+        setLinks(data.data.links);
       }
     });
   };
