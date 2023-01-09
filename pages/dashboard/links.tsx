@@ -56,6 +56,7 @@ const Links = () => {
                 url={link.url}
                 impressions={link.impressions}
                 clicks={link.clicks}
+                isOn={link.isOn}
               />
             ))
           )}
