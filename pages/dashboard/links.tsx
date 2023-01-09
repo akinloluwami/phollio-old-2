@@ -19,7 +19,6 @@ const Links = () => {
       }
     ).then((data) => {
       setLinks(data.data.link);
-      console.log(data.data.links);
     });
   };
 
