@@ -17,9 +17,10 @@ const AddNewLinkComp = () => {
     setLoading(true);
     const payload = { title, url };
 
-    postData("link", payload, {
+    postData("/link", payload, {
       Authorization: `Bearer ${token}`,
     }).then((data) => {
+      console.log(data);
       setLoading(false);
       if (data.status !== 200) {
         setError(true);
