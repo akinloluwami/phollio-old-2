@@ -1,12 +1,16 @@
 import express from "express";
-import getLinks from "../controllers/link/get-links";
-import { addLink, deleteLink, toggleLink } from "../controllers/links";
+import {
+  addProject,
+  deleteProject,
+  getProjects,
+  toggleProject,
+} from "../controllers/project";
 
 const router = express.Router();
 
-router.post("/", addLink);
-router.get("/", getLinks);
-router.post("/toggle", toggleLink);
-router.delete("/", deleteLink);
+router.post("/", addProject);
+router.get("/", getProjects);
+router.post("/toggle", toggleProject);
+router.delete("/", deleteProject);
 
 export default router;
