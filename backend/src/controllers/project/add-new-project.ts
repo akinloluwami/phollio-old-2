@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import validator from "validator";
-import Link from "../../schema/link";
+import Project from "../../schema/project";
 import user from "../../schema/user";
 
 const addProject = async (req: Request, res: Response) => {
@@ -34,17 +34,17 @@ const addProject = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User does not exist" });
     }
 
-    const newLink = new Link({
+    const newProject = new Project({
       title,
       url,
       userId,
     });
 
-    await newLink.save();
+    await newProject.save();
 
-    res.status(201).json({ message: "Link added successfully" });
+    res.status(201).json({ message: "Project added successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Error adding link", error });
+    res.status(500).json({ message: "Error adding project", error });
   }
 };
 
