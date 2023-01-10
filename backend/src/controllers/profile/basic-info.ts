@@ -12,9 +12,7 @@ const getBasicInfo = async (req: Request, res: Response) => {
     const token = req.headers.authorization.split(" ")[1];
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET!);
     const uuid = decoded.uuid;
-    console.log(uuid);
     const user = await User.User.findOne({ _id: uuid });
-    console.log(user?.username);
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
