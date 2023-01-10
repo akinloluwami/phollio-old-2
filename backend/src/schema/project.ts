@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const linkSchema = new Schema({
+const projectSchema = new Schema({
   title: {
     type: String,
   },
@@ -32,6 +32,6 @@ const linkSchema = new Schema({
   },
 });
 
-const Link = mongoose.model("Link", linkSchema);
+const Project = mongoose.model("Project", projectSchema);
 
-export default Link;
+export default Project;
