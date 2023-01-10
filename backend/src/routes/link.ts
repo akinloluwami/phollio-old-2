@@ -1,6 +1,10 @@
 import express from "express";
-import getLinks from "../controllers/link/get-links";
-import { addLink, deleteLink, toggleLink } from "../controllers/links";
+import {
+  addLink,
+  deleteLink,
+  getLinks,
+  toggleLink,
+} from "../controllers/links";
 
 const router = express.Router();
 
