@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import Link from "../../schema/link";
-import Impression from "../../schema/link-impression";
-import Click from "../../schema/link-click";
+import linkImpression from "../../schema/link-impression";
+import linkClick from "../../schema/link-click";
 import user from "../../schema/user";
 
 const getLinks = async (req: Request, res: Response) => {
@@ -22,8 +22,10 @@ const getLinks = async (req: Request, res: Response) => {
     const userLinks = await Link.find({ userId, isDeleted: false });
 
     const linksWithStats = userLinks.map(async (link) => {
-      const clicks = await Click.countDocuments({ linkId: link._id });
-      const impressions = await Impression.countDocuments({ linkId: link._id });
+      const clicks = await linkClick.countDocuments({ linkId: link._id });
+      const impressions = await linkImpression.countDocuments({
+        linkId: link._id,
+      });
 
       return {
         id: link._id,
