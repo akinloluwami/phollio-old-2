@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const clickSchema = new Schema({
+const projectClickSchema = new Schema({
   timestamp: {
     type: Date,
     default: Date.now,
@@ -23,6 +23,6 @@ const clickSchema = new Schema({
   },
 });
 
-const Click = mongoose.model("Click", clickSchema);
+const projectClick = mongoose.model("projectClick", projectClickSchema);
 
-export default Click;
+export default projectClick;
