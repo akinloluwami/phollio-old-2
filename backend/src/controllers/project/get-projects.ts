@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import Link from "../../schema/link";
+import Project from "../../schema/link";
 import linkImpression from "../../schema/link-impression";
 import linkClick from "../../schema/link-click";
 import user from "../../schema/user";
 
-const getLinks = async (req: Request, res: Response) => {
+const getProjects = async (req: Request, res: Response) => {
   try {
     if (!req.headers.authorization) {
       return res.status(401).json({ error: "Unauthorized" });
@@ -19,9 +19,9 @@ const getLinks = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User does not exist" });
     }
 
-    const userLinks = await Link.find({ userId, isDeleted: false });
+    const userProjects = await Project.find({ userId, isDeleted: false });
 
-    const linksWithStats = userLinks.map(async (link) => {
+    const linksWithStats = userProjects.map(async (link) => {
       const clicks = await linkClick.countDocuments({ linkId: link._id });
       const impressions = await linkImpression.countDocuments({
         linkId: link._id,
@@ -44,4 +44,4 @@ const getLinks = async (req: Request, res: Response) => {
   }
 };
 
-export default getLinks;
+export default getProjects;
