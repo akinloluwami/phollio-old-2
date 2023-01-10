@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const impressionSchema = new Schema({
+const linkImpressionSchema = new Schema({
   timestamp: {
     type: Date,
     default: Date.now,
@@ -23,6 +23,6 @@ const impressionSchema = new Schema({
   },
 });
 
-const Impression = mongoose.model("Impression", impressionSchema);
+const linkImpression = mongoose.model("linkImpression", linkImpressionSchema);
 
-export default Impression;
+export default linkImpression;
