@@ -13,7 +13,9 @@ const addProject = async (req: Request, res: Response) => {
     const token = req.headers.authorization.split(" ")[1];
 
     if (!title || !url || !token) {
-      return res.status(400).json({ message: "Title and url are required" });
+      return res
+        .status(400)
+        .json({ message: "Title, url and description are required" });
     }
 
     if (!validator.isURL(url)) {
@@ -24,6 +26,12 @@ const addProject = async (req: Request, res: Response) => {
       return res
         .status(400)
         .json({ message: "Title must be at least 3 characters long" });
+    }
+
+    if (description.length < 20) {
+      return res
+        .status(400)
+        .json({ message: "Description must be at least 20 characters long" });
     }
 
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET!);
