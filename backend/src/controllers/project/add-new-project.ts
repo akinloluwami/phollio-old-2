@@ -9,7 +9,7 @@ const addProject = async (req: Request, res: Response) => {
     if (!req.headers.authorization) {
       return res.status(401).json({ error: "Unauthorized" });
     }
-    const { title, url } = req.body;
+    const { title, url, description } = req.body;
     const token = req.headers.authorization.split(" ")[1];
 
     if (!title || !url || !token) {
@@ -37,6 +37,7 @@ const addProject = async (req: Request, res: Response) => {
     const newProject = new Project({
       title,
       url,
+      description,
       userId,
     });
 
