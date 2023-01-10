@@ -4,7 +4,7 @@ import validator from "validator";
 import Link from "../../schema/link";
 import user from "../../schema/user";
 
-const addLink = async (req: Request, res: Response) => {
+const addProject = async (req: Request, res: Response) => {
   try {
     if (!req.headers.authorization) {
       return res.status(401).json({ error: "Unauthorized" });
@@ -48,4 +48,4 @@ const addLink = async (req: Request, res: Response) => {
   }
 };
 
-export default addLink;
+export default addProject;
