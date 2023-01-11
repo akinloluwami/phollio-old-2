@@ -15,21 +15,19 @@ const ProjectCard = ({
   return (
     <div className="w-full px-4 bg-white shadow-sm py-5 my-10 flex items-center justify-between">
       <div className="">
-        <h1 className="font-semibold text-lg">Vibrantt</h1>
-        <h2 className="font-medium text-gray-600">
-          Color tools for designers and developers.
-        </h2>
+        <h1 className="font-semibold text-lg">{title}</h1>
+        <h2 className="font-medium text-gray-600">{description}</h2>
         <a href="#" target="_blank" rel="noopener noreferrer">
-          <h3 className="font-medium text-accent text-sm">vibrantt.co</h3>
+          <h3 className="font-medium text-accent text-sm">{url}</h3>
         </a>
         <div className="flex items-center gap-4 my-2 text-gray-600">
           <div className="flex items-center gap-[4px]">
             <HiEye />
-            1.1k
+            {impressions}
           </div>
           <div className="flex items-center gap-[4px]">
             <TbClick />
-            100
+            {clicks}
           </div>
         </div>
       </div>
