@@ -18,7 +18,7 @@ const projectClickSchema = new Schema({
   browser: {
     type: String,
   },
-  linkId: {
+  projectId: {
     type: String,
   },
 });

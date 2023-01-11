@@ -18,7 +18,7 @@ const impressionSchema = new Schema({
   browser: {
     type: String,
   },
-  linkId: {
+  projectId: {
     type: String,
   },
 });
