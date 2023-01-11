@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import Project from "../../schema/link";
+import Project from "../../schema/project";
 import user from "../../schema/user";
 
 const deleteProject = async (req: Request, res: Response) => {
@@ -17,18 +17,18 @@ const deleteProject = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User does not exist" });
     }
 
-    const { linkId } = req.query;
-    const link = await Project.findOne({ _id: linkId, userId });
-    if (!link) {
+    const { projectId } = req.query;
+    const project = await Project.findOne({ _id: projectId, userId });
+    if (!project) {
       return res.status(400).json({ message: "Project does not exist" });
     }
 
-    link.isDeleted = true;
-    await link.save();
+    project.isDeleted = true;
+    await project.save();
 
     res.status(200).json({ message: "Project deleted successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Error deleting link", error });
+    res.status(500).json({ message: "Error deleting project", error });
   }
 };
 
