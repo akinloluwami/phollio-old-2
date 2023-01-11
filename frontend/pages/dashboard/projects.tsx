@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NewProject from "../../components/NewProject";
 import ProjectCard from "../../components/ProjectCard";
+import { useUser } from "../../contexts/userContext";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 const Projects = () => {
