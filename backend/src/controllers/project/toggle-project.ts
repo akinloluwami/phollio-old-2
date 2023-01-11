@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import Project from "../../schema/link";
+import Project from "../../schema/project";
 import user from "../../schema/user";
 
 const toggleProject = async (req: Request, res: Response) => {
@@ -17,18 +17,18 @@ const toggleProject = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "User does not exist" });
     }
 
-    const { linkId } = req.body;
-    const link = await Project.findOne({ _id: linkId, userId });
-    if (!link) {
+    const { projectId } = req.body;
+    const project = await Project.findOne({ _id: projectId, userId });
+    if (!project) {
       return res.status(400).json({ message: "Project does not exist" });
     }
 
-    link.isOn = !link.isOn;
-    await link.save();
+    project.isOn = !project.isOn;
+    await project.save();
 
     res.status(200).json({ message: "Project toggled successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Error toggling link", error });
+    res.status(500).json({ message: "Error toggling project", error });
   }
 };
 
