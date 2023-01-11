@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
-const ToggleSwitch = ({
-  isOn,
-  ToggleLink,
-}: {
-  isOn: Boolean;
-  ToggleLink: any;
-}) => {
+const ToggleSwitch = ({ isOn, Toggle }: { isOn: Boolean; Toggle?: any }) => {
   const [isChecked, setIsChecked] = useState(isOn);
 
   return (
@@ -16,7 +10,7 @@ const ToggleSwitch = ({
       } px-[0.5px] transition-colors cursor-pointer`}
       onClick={() => {
         setIsChecked(!isChecked);
-        ToggleLink();
+        Toggle();
       }}
     >
       <div
