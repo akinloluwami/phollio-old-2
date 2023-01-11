@@ -3,12 +3,33 @@ import NewProject from "../../components/NewProject";
 import ProjectCard from "../../components/ProjectCard";
 import { useUser } from "../../contexts/userContext";
 import DashboardLayout from "../../layouts/DashboardLayout";
+import { fetchData } from "../../utils/requests";
 
 const Projects = () => {
   const [show, setShow] = useState(false);
   const [projects, setProjects] = useState([]);
   const { token } = useUser();
   const [errorMsg, setErrorMsg] = useState("");
+
+  const getProjects = () => {
+    fetchData(
+      "/project",
+      {},
+      {
+        Authorization: `Bearer ${token}`,
+      }
+    ).then((data) => {
+      if (data.status !== 200) {
+        setErrorMsg(data.data.message);
+      } else {
+        setLinks(data.data.links);
+      }
+    });
+  };
+
+  useEffect(() => {
+    getProjects();
+  }, [token]);
 
   return (
     <DashboardLayout>
