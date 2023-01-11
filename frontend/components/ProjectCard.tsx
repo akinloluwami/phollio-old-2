@@ -3,7 +3,15 @@ import ToggleSwitch from "./ToggleSwitch";
 import { HiEye, HiOutlineTrash } from "react-icons/hi2";
 import { TbClick } from "react-icons/tb";
 
-const ProjectCard = () => {
+const ProjectCard = ({
+  title,
+  url,
+  description,
+  impressions,
+  clicks,
+  isOn,
+  id,
+}: any) => {
   return (
     <div className="w-full px-4 bg-white shadow-sm py-5 my-10 flex items-center justify-between">
       <div className="">
