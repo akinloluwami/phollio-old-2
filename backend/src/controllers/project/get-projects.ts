@@ -21,7 +21,7 @@ const getProjects = async (req: Request, res: Response) => {
 
     const userProjects = await Project.find({ userId, isDeleted: false });
 
-    const linksWithStats = userProjects.map(async (link) => {
+    const projectsWithStats = userProjects.map(async (link) => {
       const clicks = await linkClick.countDocuments({ linkId: link._id });
       const impressions = await linkImpression.countDocuments({
         linkId: link._id,
@@ -37,8 +37,8 @@ const getProjects = async (req: Request, res: Response) => {
       };
     });
 
-    const linksWithStatsArray = await Promise.all(linksWithStats);
-    res.status(200).json({ links: linksWithStatsArray });
+    const projectsWithStatsArray = await Promise.all(projectsWithStats);
+    res.status(200).json({ projects: projectsWithStatsArray });
   } catch (error) {
     res.status(500).json({ message: "Error getting links", error });
   }
