@@ -47,7 +47,7 @@ const LinkCard = ({ title, url, impressions, clicks, isOn, id }: any) => {
       </div>
       <div className="flex flex-col items-center">
         <button>
-          <ToggleSwitch ToggleLink={ToggleLink} isOn={isOn} />
+          <ToggleSwitch Toggle={ToggleLink} isOn={isOn} />
         </button>
         <button className="text-xl mt-5" onClick={DeleteLink}>
           <HiOutlineTrash />
