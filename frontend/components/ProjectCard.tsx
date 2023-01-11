@@ -35,7 +35,7 @@ const ProjectCard = ({
       </div>
       <div className="flex flex-col items-center">
         <button>
-          <ToggleSwitch />
+          <ToggleSwitch isOn={isOn} />
         </button>
         <button className="text-xl mt-5">
           <HiOutlineTrash />
