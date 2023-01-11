@@ -24,9 +24,7 @@ const LinkCard = ({ title, url, impressions, clicks, isOn, id }: any) => {
       {
         Authorization: `Bearer ${token}`,
       }
-    ).then((data) => {
-      console.log(data);
-    });
+    );
   };
 
   return (
