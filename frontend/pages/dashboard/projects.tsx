@@ -5,6 +5,9 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 
 const Projects = () => {
   const [show, setShow] = useState(false);
+  const [projects, setProjects] = useState([]);
+  const { token } = useUser();
+  const [errorMsg, setErrorMsg] = useState("");
 
   return (
     <DashboardLayout>
