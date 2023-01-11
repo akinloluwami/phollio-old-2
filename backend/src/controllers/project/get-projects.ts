@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import Project from "../../schema/link";
-import linkImpression from "../../schema/link-impression";
-import linkClick from "../../schema/link-click";
+import Project from "../../schema/project";
+import projectImpression from "../../schema/project-impression";
+import projectClick from "../../schema/project-click";
 import user from "../../schema/user";
 
 const getProjects = async (req: Request, res: Response) => {
@@ -21,17 +21,19 @@ const getProjects = async (req: Request, res: Response) => {
 
     const userProjects = await Project.find({ userId, isDeleted: false });
 
-    const projectsWithStats = userProjects.map(async (link) => {
-      const clicks = await linkClick.countDocuments({ linkId: link._id });
-      const impressions = await linkImpression.countDocuments({
-        linkId: link._id,
+    const projectsWithStats = userProjects.map(async (project) => {
+      const clicks = await projectClick.countDocuments({
+        projectId: project._id,
+      });
+      const impressions = await projectImpression.countDocuments({
+        projectId: project._id,
       });
 
       return {
-        id: link._id,
-        title: link.title,
-        url: link.url,
-        isOn: link.isOn,
+        id: project._id,
+        title: project.title,
+        url: project.url,
+        isOn: project.isOn,
         clicks,
         impressions,
       };
@@ -40,7 +42,7 @@ const getProjects = async (req: Request, res: Response) => {
     const projectsWithStatsArray = await Promise.all(projectsWithStats);
     res.status(200).json({ projects: projectsWithStatsArray });
   } catch (error) {
-    res.status(500).json({ message: "Error getting links", error });
+    res.status(500).json({ message: "Error getting projects", error });
   }
 };
 
