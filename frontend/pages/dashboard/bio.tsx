@@ -65,6 +65,7 @@ const Bio = () => {
             displayNameSt.length < 4 ||
             displayNameSt.length > 15
           }
+          onClick={handleUpdate}
         >
           Save Changes
         </button>
