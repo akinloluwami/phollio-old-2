@@ -10,6 +10,11 @@ const Bio = () => {
   const [displayNameSt, setDisplayNameSt] = useState("");
   const [usernameSt, setUsernameSt] = useState("");
   const [bioSt, setBioSt] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
 
   useEffect(() => {
     setDisplayNameSt(displayName);
