@@ -1,6 +1,14 @@
 import { useState } from "react";
 
 const NewProject = () => {
+  const [title, setTitle] = useState("");
+  const [url, setUrl] = useState("");
+  const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
   return (
     <div className="w-full  p-3 ">
       <div className="w-full my-5">
