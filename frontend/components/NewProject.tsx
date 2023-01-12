@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { postData } from "../utils/requests";
 
 const NewProject = () => {
   const [title, setTitle] = useState("");
@@ -9,6 +10,28 @@ const NewProject = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
+
+  const handleSubmit = () => {
+    setLoading(true);
+    const payload = { title, url };
+
+    postData("/project", payload, {
+      Authorization: `Bearer ${token}`,
+    }).then((data) => {
+      console.log(data);
+      setLoading(false);
+      if (data.status !== 201) {
+        setError(true);
+        setErrorMsg(data.data.message || data.data.error);
+      } else {
+        setSuccess(true);
+        setSuccessMsg(data.data.message);
+        setTitle("");
+        setUrl("");
+      }
+    });
+  };
+
   return (
     <div className="w-full  p-3 ">
       <div className="w-full my-5">
