@@ -66,7 +66,9 @@ const NewProject = () => {
         />
       </div>
       <button
-        className="w-full h-10 bg-accent text-white"
+        className="w-full h-10 text-white
+        bg-accent disabled:cursor-not-allowed disabled:opacity-50 transition-opacity
+        "
         disabled={!title || !url || !description || loading}
       >
         Publish
