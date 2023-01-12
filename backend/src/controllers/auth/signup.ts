@@ -40,6 +40,12 @@ const signup = async (req: Request, res: Response) => {
     if (existingUsername) {
       return res.status(400).json({ message: "Username is already taken" });
     }
+    if (!/^[a-zA-Z0-9]+$/.test(username)) {
+      return res.status(400).json({
+        message: "Username can only contain letters and numbers",
+      });
+    }
+
     const existingEmail = await user.User.findOne({ email });
     if (existingEmail) {
       return res.status(400).json({ message: "Email is already taken" });
