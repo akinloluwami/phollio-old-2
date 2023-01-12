@@ -65,7 +65,12 @@ const NewProject = () => {
           value={url}
         />
       </div>
-      <button className="w-full h-10 bg-accent text-white">Publish</button>
+      <button
+        className="w-full h-10 bg-accent text-white"
+        disabled={!title || !url || !description || loading}
+      >
+        Publish
+      </button>
     </div>
   );
 };
