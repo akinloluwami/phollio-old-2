@@ -23,13 +23,10 @@ const Bio = () => {
       username: usernameSt,
       bio: bioSt,
     };
-    postData(
-      "/profile/update",
-      { payload },
-      {
-        Authorization: `Bearer ${token}`,
-      }
-    ).then((data) => console.log(data));
+    console.log(payload);
+    postData("/profile/update", payload, {
+      Authorization: `Bearer ${token}`,
+    }).then((data) => console.log(data));
   };
 
   return (
@@ -37,14 +34,16 @@ const Bio = () => {
       <div className="w-full">
         <ProfilePicture />
       </div>
+      {bioSt}
       <div className="w-full  p-3 ">
         <div className="w-full my-5">
-          <p>Profile name</p>
+          <p>Display name</p>
           <input
             type="text"
             placeholder="Display name"
             className="w-full h-10 pl-3 border-[1px] bg-gray-50"
-            defaultValue={displayNameSt}
+            value={displayNameSt}
+            onChange={(e) => setDisplayNameSt(e.target.value)}
           />
         </div>
         <div className="w-full my-5">
@@ -53,16 +52,18 @@ const Bio = () => {
             type="text"
             placeholder="Username"
             className="w-full h-10 pl-3 border-[1px] bg-gray-50"
-            defaultValue={usernameSt}
+            value={usernameSt}
+            onChange={(e) => setUsernameSt(e.target.value)}
           />
         </div>
         <div className="my-2">
-          <p>Profile description</p>
+          <p>Bio</p>
           <textarea
             placeholder="Bio"
             maxLength={300}
             className="w-full h-32 py-2 pl-3 border-[1px] bg-gray-50"
-            defaultValue={bioSt}
+            value={bioSt}
+            onChange={(e) => setBioSt(e.target.value)}
           />
         </div>
         <button
