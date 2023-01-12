@@ -16,7 +16,6 @@ const resendVerificationEmail = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "User not found" });
     }
 
-    // Check if OTP was sent within the past 2 minutes
     if (user.otpExpiry && user.otpExpiry > new Date()) {
       const timeRemaining = user.otpExpiry.getTime() - new Date().getTime();
       const minutes = Math.round(timeRemaining / 60000);
@@ -25,15 +24,12 @@ const resendVerificationEmail = async (req: Request, res: Response) => {
       });
     }
 
-    // Generate new OTP
     const secret = speakeasy.generateSecret({ length: 20 }).base32;
     const otp = speakeasy.totp({ secret, digits: 6 });
 
-    // Set new OTP expiry time to 2 minutes
     let otpExpiry = new Date();
     otpExpiry.setMinutes(otpExpiry.getMinutes() + 2);
 
-    // If the user has previously requested an OTP, increment the expiry time by 1 minute
     if (user.otpExpiry) {
       otpExpiry.setMinutes(otpExpiry.getMinutes() + 1);
     }
@@ -42,8 +38,6 @@ const resendVerificationEmail = async (req: Request, res: Response) => {
     user.otpExpiry = otpExpiry;
 
     await user.save();
-
-    // Send OTP
 
     // Send OTP to user's email address
     // SendEmail(user.email, otp);
