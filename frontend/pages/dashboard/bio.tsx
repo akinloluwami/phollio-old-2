@@ -11,7 +11,9 @@ const Bio = () => {
 
   useEffect(() => {
     setDisplayNameSt(displayName);
-  }, [displayName]);
+    setUsernameSt(username);
+    setBioSt(bio);
+  }, [displayName, username, bio]);
 
   return (
     <DashboardLayout>
@@ -28,12 +30,22 @@ const Bio = () => {
             defaultValue={displayNameSt}
           />
         </div>
+        <div className="w-full my-5">
+          <p>Username</p>
+          <input
+            type="text"
+            placeholder="Username"
+            className="w-full h-10 pl-3 border-[1px] bg-gray-50"
+            defaultValue={usernameSt}
+          />
+        </div>
         <div className="my-2">
           <p>Profile description</p>
           <textarea
             placeholder="Bio"
             maxLength={300}
             className="w-full h-32 py-2 pl-3 border-[1px] bg-gray-50"
+            defaultValue={bio}
           />
         </div>
         <button
