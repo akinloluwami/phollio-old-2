@@ -6,6 +6,8 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 const Bio = () => {
   const { displayName } = useUser();
   const [displayNameSt, setDisplayNameSt] = useState("");
+  const [usernameSt, setUsernameSt] = useState("");
+  const [bioSt, setBioSt] = useState("");
 
   useEffect(() => {
     setDisplayNameSt(displayName);
