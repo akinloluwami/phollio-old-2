@@ -44,6 +44,7 @@ const NewProject = () => {
           type="text"
           placeholder="Name of your project"
           className="w-full h-10 pl-3 border-[1px] bg-gray-50"
+          value={title}
         />
       </div>
       <div className="my-2">
@@ -52,6 +53,7 @@ const NewProject = () => {
           placeholder="What's your project about?"
           maxLength={150}
           className="w-full h-24 py-2 pl-3 border-[1px] bg-gray-50"
+          value={description}
         />
       </div>
       <div className="w-full my-2">
@@ -60,6 +62,7 @@ const NewProject = () => {
           type="text"
           placeholder="Your project URL"
           className="w-full h-10 pl-3 border-[1px] bg-gray-50"
+          value={url}
         />
       </div>
       <button className="w-full h-10 bg-accent text-white">Publish</button>
