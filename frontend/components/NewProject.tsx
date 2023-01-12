@@ -16,7 +16,7 @@ const NewProject = () => {
 
   const handleSubmit = () => {
     setLoading(true);
-    const payload = { title, url };
+    const payload = { title, url, description };
 
     postData("/project", payload, {
       Authorization: `Bearer ${token}`,
