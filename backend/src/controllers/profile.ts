@@ -1,2 +1,3 @@
 import getBasicInfo from "./profile/basic-info";
-export { getBasicInfo };
+import updateProfile from "./profile/update-profile";
+export { getBasicInfo, updateProfile };
