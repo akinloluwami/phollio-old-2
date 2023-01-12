@@ -46,8 +46,8 @@ const NewProject = () => {
         <p className="text-green-500 text-center my-5">{successMsg}</p>
       )}
 
-      <div className="w-full  p-3 ">
-        <div className="w-full my-5">
+      <div className="w-full  p-3">
+        <div className="w-full">
           <p>Project title</p>
           <input
             type="text"
