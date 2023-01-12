@@ -55,6 +55,7 @@ const NewProject = () => {
           maxLength={150}
           className="w-full h-24 py-2 pl-3 border-[1px] bg-gray-50"
           value={description}
+          onChange={(e) => setUrl(e.target.value)}
         />
       </div>
       <div className="w-full my-2">
