@@ -2,6 +2,8 @@ import React from "react";
 import ToggleSwitch from "./ToggleSwitch";
 import { HiEye, HiOutlineTrash } from "react-icons/hi2";
 import { TbClick } from "react-icons/tb";
+import { postData } from "../utils/requests";
+import { useUser } from "../contexts/userContext";
 
 const ProjectCard = ({
   title,
@@ -12,6 +14,17 @@ const ProjectCard = ({
   isOn,
   id,
 }: any) => {
+  const { token } = useUser();
+  const ToggleProject = () => {
+    postData(
+      "/project/toggle",
+      { projectId: id },
+      {
+        Authorization: `Bearer ${token}`,
+      }
+    );
+  };
+
   return (
     <div className="w-full px-4 bg-white shadow-sm py-5 my-10 flex items-center justify-between">
       <div className="">
@@ -33,7 +46,7 @@ const ProjectCard = ({
       </div>
       <div className="flex flex-col items-center">
         <button>
-          <ToggleSwitch isOn={isOn} />
+          <ToggleSwitch isOn={isOn} Toggle={ToggleProject} />
         </button>
         <button className="text-xl mt-5">
           <HiOutlineTrash />
