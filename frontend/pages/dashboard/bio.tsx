@@ -45,7 +45,7 @@ const Bio = () => {
             placeholder="Bio"
             maxLength={300}
             className="w-full h-32 py-2 pl-3 border-[1px] bg-gray-50"
-            defaultValue={bio}
+            defaultValue={bioSt}
           />
         </div>
         <button
