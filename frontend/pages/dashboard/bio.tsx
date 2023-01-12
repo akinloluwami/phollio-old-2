@@ -23,6 +23,7 @@ const Bio = () => {
   }, [displayName, username, bio]);
 
   const handleUpdate = () => {
+    setLoading(true);
     const payload = {
       displayName: displayNameSt,
       username: usernameSt,
@@ -31,6 +32,7 @@ const Bio = () => {
     postData("/profile/update", payload, {
       Authorization: `Bearer ${token}`,
     }).then((data) => {
+      setLoading(false);
       if (data.status !== 201) {
         setError(true);
         setErrorMsg(data.data.message || data.data.error);
