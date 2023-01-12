@@ -35,7 +35,6 @@ const signup = async (req: Request, res: Response) => {
         .json({ message: "Display name must be between 4 and 20 characters" });
     }
 
-    // Check if username or email is already taken
     const existingUsername = await user.User.findOne({ username });
     if (existingUsername) {
       return res.status(400).json({ message: "Username is already taken" });
@@ -51,18 +50,14 @@ const signup = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Email is already taken" });
     }
 
-    // Encrypt password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Generate OTP
     const secret = speakeasy.generateSecret({ length: 20 }).base32;
     const otp = speakeasy.totp({ secret, digits: 6 });
 
-    // Set OTP expiry time to 30 minutes
     const otpExpiry = new Date();
     otpExpiry.setMinutes(otpExpiry.getMinutes() + 30);
 
-    // Create new user
     const newUser = new user.User({
       displayName,
       username,
@@ -78,6 +73,8 @@ const signup = async (req: Request, res: Response) => {
     );
 
     await newUser.save();
+
+    //Send verification email
 
     res.status(201).json({ message: "User created successfully", token });
   } catch (error) {
