@@ -7,7 +7,6 @@ import validator from "validator";
 
 const updateProfile = async (req: Request, res: Response) => {
   try {
-    // Verify JWT and get user uuid
     if (!req.headers.authorization) {
       return res.status(401).json({ error: "Unauthorized" });
     }
