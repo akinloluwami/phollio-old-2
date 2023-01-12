@@ -70,6 +70,7 @@ const NewProject = () => {
         bg-accent disabled:cursor-not-allowed disabled:opacity-50 transition-opacity
         "
         disabled={!title || !url || !description || loading}
+        onClick={handleSubmit}
       >
         Publish
       </button>
