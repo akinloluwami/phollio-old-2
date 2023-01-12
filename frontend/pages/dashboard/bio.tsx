@@ -48,8 +48,15 @@ const Bio = () => {
       <div className="w-full">
         <ProfilePicture />
       </div>
-      {bioSt}
       <div className="w-full  p-3 ">
+        {error && !loading && !success && (
+          <p className="text-red-500 text-center my-5">{errorMsg}</p>
+        )}
+
+        {success && !loading && (
+          <p className="text-green-500 text-center my-5">{successMsg}</p>
+        )}
+
         <div className="w-full my-5">
           <p>Display name</p>
           <input
