@@ -5,6 +5,7 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 import { postData } from "../../utils/requests";
 
 const Bio = () => {
+  const { token } = useUser();
   const { displayName, username, bio } = useUser();
   const [displayNameSt, setDisplayNameSt] = useState("");
   const [usernameSt, setUsernameSt] = useState("");
@@ -59,7 +60,7 @@ const Bio = () => {
           />
         </div>
         <button
-          className="w-full h-10 bg-accent text-white"
+          className="w-full h-10 bg-accent text-white disabled:cursor-not-allowed disabled:opacity-50"
           disabled={
             !displayNameSt ||
             displayNameSt.length < 4 ||
