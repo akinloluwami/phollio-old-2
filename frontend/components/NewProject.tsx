@@ -31,6 +31,7 @@ const NewProject = () => {
         setSuccessMsg(data.data.message);
         setTitle("");
         setUrl("");
+        setDescription("");
       }
     });
   };
