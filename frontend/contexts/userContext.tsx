@@ -17,6 +17,7 @@ const UserProvider = ({ children }: any) => {
   const [isEmailVerified, setIsEmailVerified] = useState(true);
   const [token, setToken] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [bio, setBio] = useState("");
 
   const getBasicInfo = () => {
     fetchData(
@@ -30,6 +31,7 @@ const UserProvider = ({ children }: any) => {
       setEmail(data.data.email);
       setIsEmailVerified(data.data.isEmailVerified);
       setDisplayName(data.data.displayName);
+      setBio(data.data.bio);
     });
   };
 
