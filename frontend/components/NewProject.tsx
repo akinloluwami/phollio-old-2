@@ -1,5 +1,3 @@
-import React from "react";
-
 const NewProject = () => {
   return (
     <div className="w-full  p-3 ">
