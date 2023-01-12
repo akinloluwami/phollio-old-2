@@ -31,7 +31,15 @@ const Bio = () => {
     console.log(payload);
     postData("/profile/update", payload, {
       Authorization: `Bearer ${token}`,
-    }).then((data) => console.log(data));
+    }).then((data) => {
+      if (data.status !== 201) {
+        setError(true);
+        setErrorMsg(data.data.message || data.data.error);
+      } else {
+        setSuccess(true);
+        setSuccessMsg(data.data.message);
+      }
+    });
   };
 
   return (
