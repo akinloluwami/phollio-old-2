@@ -21,7 +21,6 @@ const NewProject = () => {
     postData("/project", payload, {
       Authorization: `Bearer ${token}`,
     }).then((data) => {
-      console.log(data);
       setLoading(false);
       if (data.status !== 201) {
         setError(true);
