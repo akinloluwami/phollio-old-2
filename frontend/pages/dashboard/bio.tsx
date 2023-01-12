@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ProfilePicture from "../../components/ProfilePicture";
 import { useUser } from "../../contexts/userContext";
 import DashboardLayout from "../../layouts/DashboardLayout";
+import { postData } from "../../utils/requests";
 
 const Bio = () => {
   const { displayName, username, bio } = useUser();
@@ -14,6 +15,15 @@ const Bio = () => {
     setUsernameSt(username);
     setBioSt(bio);
   }, [displayName, username, bio]);
+
+  const handleUpdate = () => {
+    const payload = {
+      displayName: displayNameSt,
+      username: usernameSt,
+      bio: bioSt,
+    };
+    postData("/profile/update", { payload }).then((data) => console.log(data));
+  };
 
   return (
     <DashboardLayout>
