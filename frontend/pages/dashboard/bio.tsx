@@ -28,7 +28,6 @@ const Bio = () => {
       username: usernameSt,
       bio: bioSt,
     };
-    console.log(payload);
     postData("/profile/update", payload, {
       Authorization: `Bearer ${token}`,
     }).then((data) => {
