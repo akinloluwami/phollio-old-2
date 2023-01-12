@@ -2,7 +2,7 @@ import React from "react";
 import ToggleSwitch from "./ToggleSwitch";
 import { HiEye, HiOutlineTrash } from "react-icons/hi2";
 import { TbClick } from "react-icons/tb";
-import { postData } from "../utils/requests";
+import { deleteData, postData } from "../utils/requests";
 import { useUser } from "../contexts/userContext";
 
 const ProjectCard = ({
@@ -18,6 +18,16 @@ const ProjectCard = ({
   const ToggleProject = () => {
     postData(
       "/project/toggle",
+      { projectId: id },
+      {
+        Authorization: `Bearer ${token}`,
+      }
+    );
+  };
+
+  const DeleteProject = () => {
+    deleteData(
+      "/project",
       { projectId: id },
       {
         Authorization: `Bearer ${token}`,
@@ -48,7 +58,7 @@ const ProjectCard = ({
         <button>
           <ToggleSwitch isOn={isOn} Toggle={ToggleProject} />
         </button>
-        <button className="text-xl mt-5">
+        <button className="text-xl mt-5" onClick={DeleteProject}>
           <HiOutlineTrash />
         </button>
       </div>
