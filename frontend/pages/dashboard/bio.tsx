@@ -33,7 +33,7 @@ const Bio = () => {
       Authorization: `Bearer ${token}`,
     }).then((data) => {
       setLoading(false);
-      if (data.status !== 201) {
+      if (data.status !== 200) {
         setError(true);
         setErrorMsg(data.data.message || data.data.error);
       } else {
