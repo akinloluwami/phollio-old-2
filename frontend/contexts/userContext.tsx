@@ -7,6 +7,7 @@ interface UserContext {
   token: string;
   isEmailVerified: boolean;
   displayName: string;
+  bio: String;
 }
 
 const UserContext = createContext<UserContext | null>(null);
@@ -46,7 +47,7 @@ const UserProvider = ({ children }: any) => {
 
   return (
     <UserContext.Provider
-      value={{ username, email, token, isEmailVerified, displayName }}
+      value={{ username, email, token, isEmailVerified, displayName, bio }}
     >
       {children}
     </UserContext.Provider>
