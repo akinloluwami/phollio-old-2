@@ -20,7 +20,8 @@ const getBasicInfo = async (req: Request, res: Response) => {
     const username = user.username;
     const isEmailVerified = user.isEmailVerified;
     const displayName = user.displayName;
-    return res.json({ email, username, isEmailVerified, displayName });
+    const bio = user.bio;
+    return res.json({ email, username, isEmailVerified, displayName, bio });
   } catch (error: any) {
     return res.status(500).json({ error: error.message });
   }
