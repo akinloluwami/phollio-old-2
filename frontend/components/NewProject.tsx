@@ -44,8 +44,8 @@ const NewProject = () => {
           type="text"
           placeholder="Name of your project"
           className="w-full h-10 pl-3 border-[1px] bg-gray-50"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <div className="my-2">
@@ -54,7 +54,7 @@ const NewProject = () => {
           placeholder="What's your project about?"
           maxLength={150}
           className="w-full h-24 py-2 pl-3 border-[1px] bg-gray-50"
-          value={description}
+          value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
       </div>
