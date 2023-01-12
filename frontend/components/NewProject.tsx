@@ -65,6 +65,7 @@ const NewProject = () => {
           placeholder="Your project URL"
           className="w-full h-10 pl-3 border-[1px] bg-gray-50"
           value={url}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <button
