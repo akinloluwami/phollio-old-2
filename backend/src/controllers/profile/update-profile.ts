@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
-import validator from "validator";
 
 const updateProfile = async (req: Request, res: Response) => {
   try {
