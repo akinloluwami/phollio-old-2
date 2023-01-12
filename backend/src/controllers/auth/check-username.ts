@@ -21,10 +21,9 @@ const checkUsername = async (req: Request, res: Response) => {
         .json({ message: "Username must be between 4 and 20 characters" });
     }
 
-    if (/[^a-zA-Z0-9_-]/.test(username)) {
+    if (!/^[a-zA-Z0-9]+$/.test(username)) {
       return res.status(400).json({
-        message:
-          "Username can only contain letters, numbers, underscores, and dashes",
+        message: "Username can only contain letters and numbers",
       });
     }
 
