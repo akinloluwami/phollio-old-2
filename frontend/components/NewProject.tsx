@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useUser } from "../contexts/userContext";
 import { postData } from "../utils/requests";
 
 const NewProject = () => {
@@ -10,6 +11,8 @@ const NewProject = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
+
+  const { token } = useUser();
 
   const handleSubmit = () => {
     setLoading(true);
