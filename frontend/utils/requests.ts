@@ -5,7 +5,7 @@ let defaultUrl: string = "http://localhost:2004";
 
 const postData = async (
   url: string,
-  payload?: any,
+  payload: Object,
   headers?: any,
   configurations?: any
 ): Promise<any> => {
