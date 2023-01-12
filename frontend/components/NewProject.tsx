@@ -45,6 +45,7 @@ const NewProject = () => {
           placeholder="Name of your project"
           className="w-full h-10 pl-3 border-[1px] bg-gray-50"
           value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
       <div className="my-2">
