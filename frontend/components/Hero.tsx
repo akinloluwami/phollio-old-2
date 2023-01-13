@@ -86,8 +86,8 @@ const Hero = () => {
         <br /> all in one place.{" "}
       </h1>
       <div className="max-w-xl mt-8 mx-auto">
-        <div className="flex items-center justify-between lg:w-full w-11/12 mx-auto  bg-white text-black  text-xl">
-          <div className="w-4/5 flex items-center">
+        <div className="flex items-center justify-between lg:w-full w-11/12 mx-auto  bg-white border-2 border-accent text-black  text-xl">
+          <div className="w-4/5 flex items-center py-3">
             <b className="pl-2">youpage.dev/</b>
             <input
               type="text"
@@ -99,7 +99,7 @@ const Hero = () => {
           </div>
           <Link href={`/signup?username=${username}`} className="w-1/5">
             <button
-              className="bg-black text-white py-4 px-3 flex items-center disabled:opacity-50 w-full"
+              className="bg-accent text-white px-3 flex items-center py-3 disabled:opacity-50 w-full"
               disabled={username !== "" && !usernameAvaibable}
             >
               Signup
@@ -107,7 +107,7 @@ const Hero = () => {
             </button>
           </Link>
         </div>
-        <div className="w-fit px-3 mx-auto bg-gray-800">
+        <div className="lg:w-full w-11/12 mx-auto">
           {isCheckingUsername && (
             <div className="flex items-center text-accent my-2">
               <p className="text-xl animate-spin">
