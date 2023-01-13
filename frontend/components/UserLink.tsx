@@ -7,3 +7,5 @@ const UserLink = () => {
     </div>
   );
 };
+
+export default UserLink;
