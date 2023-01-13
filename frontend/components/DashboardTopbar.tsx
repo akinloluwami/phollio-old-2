@@ -3,6 +3,7 @@ import { BiChevronDown } from "react-icons/bi";
 import { RiShareLine } from "react-icons/ri";
 import { IoAnalyticsSharp } from "react-icons/io5";
 import Share from "./Share";
+import UserLink from "./UserLink";
 
 const DashboardTopbar = ({ username }: any) => {
   return (
@@ -18,6 +19,7 @@ const DashboardTopbar = ({ username }: any) => {
           <IoAnalyticsSharp />
           <p>Analytics</p>
         </Link>
+        <UserLink />
         {/* <Share /> */}
         <div className="flex items-center gap-2 hover:bg-gray-200 px-2 py-1 transition-colors cursor-pointer">
           <div className="h-10 w-10 rounded-full">
