@@ -70,7 +70,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <h1 className="text-7xl mt-10 text-center font-bold">
+      <h1 className="lg:text-7xl text-5xl mt-10 text-center font-bold">
         Your{" "}
         <Typewriter
           words={["projects", "links", "tech stack", "...everything"]}
