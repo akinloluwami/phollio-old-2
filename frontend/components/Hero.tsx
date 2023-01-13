@@ -37,7 +37,7 @@ const Hero = () => {
     checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
   return (
-    <div className="bg-accent h-screen w-screen text-white">
+    <div className="bg-white h-screen w-screen text-black">
       <div className="lg:px-20 px-3 flex justify-between py-8 items-center">
         <h1>YouPage</h1>
         <div className="hidden lg:block">
@@ -72,18 +72,68 @@ const Hero = () => {
       </div>
       <h1 className="lg:text-7xl text-5xl mt-10 text-center font-bold">
         Your{" "}
-        <Typewriter
-          words={["projects", "links", "tech stack", "...everything"]}
-          loop={1000000000000000}
-          cursor
-          cursorStyle="_"
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />{" "}
+        <span>
+          <Typewriter
+            words={["projects", "links", "tech stack", "...everything"]}
+            loop={1000000000000000}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </span>
         <br /> all in one place.{" "}
       </h1>
-      <div className="max-w-xl mt-8 mx-auto"></div>
+      <div className="max-w-xl mt-8 mx-auto">
+        <div className="flex items-center justify-between lg:w-full w-11/12 mx-auto  bg-white text-black  text-xl">
+          <div className="w-4/5 flex items-center">
+            <b className="pl-2">youpage.dev/</b>
+            <input
+              type="text"
+              placeholder="yourname"
+              className="outline-none font-semibold w-1/2"
+              spellCheck={"false"}
+              onChange={debouncedCheckUsername}
+            />
+          </div>
+          <Link href={`/signup?username=${username}`} className="w-1/5">
+            <button
+              className="bg-black text-white py-4 px-3 flex items-center disabled:opacity-50 w-full"
+              disabled={username !== "" && !usernameAvaibable}
+            >
+              Signup
+              <AiOutlineCaretRight />
+            </button>
+          </Link>
+        </div>
+        <div className="w-fit px-3 mx-auto bg-gray-800">
+          {isCheckingUsername && (
+            <div className="flex items-center text-accent my-2">
+              <p className="text-xl animate-spin">
+                <RiLoader3Fill />
+              </p>
+              <small>Checking...</small>
+            </div>
+          )}
+          {!usernameAvaibable && !isCheckingUsername && username && (
+            <div className="flex items-center text-red-500 my-2">
+              <p className="text-xl">
+                <IoCloseCircleOutline />
+              </p>
+              <small>{usernameCheckMsg}</small>
+            </div>
+          )}
+          {usernameAvaibable && !isCheckingUsername && (
+            <div className="flex items-center text-green-500 my-2">
+              <p className="text-xl">
+                <BsCheckAll />
+              </p>
+              <small>{usernameCheckMsg}</small>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
