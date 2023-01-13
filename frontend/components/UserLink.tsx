@@ -1,7 +1,9 @@
 import { useUser } from ".././contexts/userContext";
 import { MdContentCopy } from "react-icons/md";
+import useCopyToClipboard from "../hooks/useCopyToClipboard";
 const UserLink = () => {
   const { username } = useUser();
+  const [value, copy] = useCopyToClipboard();
   return (
     <div className="flex items-center gap-2">
       <a
