@@ -8,6 +8,7 @@ import { debounce } from "lodash";
 import { RiLoader3Fill } from "react-icons/ri";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { BsCheckAll } from "react-icons/bs";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
 const Hero = () => {
   const [username, setUsername] = useState("");
@@ -52,6 +53,9 @@ const Hero = () => {
             </li>
           </ul>
         </div>
+        <button className="lg:hidden">
+          <HiOutlineMenuAlt4 />
+        </button>
         <div className="hidden lg:block">
           <Link href={"/login"}>
             <button className="mr-5 bg-white text-black h-12 w-24">
