@@ -52,7 +52,7 @@ const Hero = () => {
             </li>
           </ul>
         </div>
-        <div className="">
+        <div className="hidden lg:block">
           <Link href={"/login"}>
             <button className="mr-5 bg-white text-black h-12 w-24">
               <b>Login</b>
