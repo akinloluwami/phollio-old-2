@@ -11,7 +11,7 @@ const UserLink = () => {
         phollio.com/{username}
       </a>
 
-      <button>
+      <button onClick={() => copy(link)}>
         <MdContentCopy />
       </button>
     </div>
