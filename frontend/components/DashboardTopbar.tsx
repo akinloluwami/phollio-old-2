@@ -18,7 +18,7 @@ const DashboardTopbar = ({ username }: any) => {
           <IoAnalyticsSharp />
           <p>Analytics</p>
         </Link>
-        <Share />
+        {/* <Share /> */}
         <div className="flex items-center gap-2 hover:bg-gray-200 px-2 py-1 transition-colors cursor-pointer">
           <div className="h-10 w-10 rounded-full">
             <img
