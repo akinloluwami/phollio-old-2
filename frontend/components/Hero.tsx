@@ -39,7 +39,7 @@ const Hero = () => {
     <div className="bg-accent h-screen w-screen text-white">
       <div className="px-20 flex justify-between py-8 items-center">
         <h1>YouPage</h1>
-        <div className="">
+        <div className="hidden lg:block">
           <ul className="flex items-center gap-10 font-bold">
             <li>
               <a href="#">Explore Developers</a>
