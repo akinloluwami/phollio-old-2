@@ -83,51 +83,7 @@ const Hero = () => {
         />{" "}
         <br /> all in one place.{" "}
       </h1>
-      <div className="flex items-center justify-center mt-16 bg-white text-black w-fit mx-auto text-xl pl-5">
-        <b>youpage.dev/</b>
-        <input
-          type="text"
-          placeholder="yourname"
-          className="outline-none font-semibold"
-          spellCheck={"false"}
-          onChange={debouncedCheckUsername}
-        />
-        <Link href={`/signup?username=${username}`}>
-          <button
-            className="bg-black text-white py-4 px-3 flex items-center disabled:opacity-50"
-            disabled={username !== "" && !usernameAvaibable}
-          >
-            Start your page
-            <AiOutlineCaretRight />
-          </button>
-        </Link>
-      </div>
-      <div className="w-fit px-3 mx-auto bg-gray-800">
-        {isCheckingUsername && (
-          <div className="flex items-center text-accent my-2">
-            <p className="text-xl animate-spin">
-              <RiLoader3Fill />
-            </p>
-            <small>Checking...</small>
-          </div>
-        )}
-        {!usernameAvaibable && !isCheckingUsername && username && (
-          <div className="flex items-center text-red-500 my-2">
-            <p className="text-xl">
-              <IoCloseCircleOutline />
-            </p>
-            <small>{usernameCheckMsg}</small>
-          </div>
-        )}
-        {usernameAvaibable && !isCheckingUsername && (
-          <div className="flex items-center text-green-500 my-2">
-            <p className="text-xl">
-              <BsCheckAll />
-            </p>
-            <small>{usernameCheckMsg}</small>
-          </div>
-        )}
-      </div>
+      <div className="max-w-xl mt-8 mx-auto"></div>
     </div>
   );
 };
