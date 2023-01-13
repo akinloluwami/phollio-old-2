@@ -72,7 +72,7 @@ const Hero = () => {
       </div>
       <h1 className="lg:text-7xl text-5xl mt-10 text-center font-bold">
         Your{" "}
-        <span>
+        <span className="text-accent">
           <Typewriter
             words={["projects", "links", "tech stack", "...everything"]}
             loop={1000000000000000}
