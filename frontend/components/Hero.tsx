@@ -83,7 +83,7 @@ const Hero = () => {
             </li>
           </ul>
         </div>
-        <button className="lg:hidden text-3xl">
+        <button className="lg:hidden text-3xl" onChange={() => setOpen(true)}>
           <HiOutlineMenuAlt4 />
         </button>
         <div className="hidden lg:block">
