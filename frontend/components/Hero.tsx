@@ -42,7 +42,7 @@ const Hero = () => {
       <div className="lg:hidden absolute bg-white w-screen px-5 py-3 z-[100000000000000]">
         <div className="flex justify-between items-center">
           <h1>Phollio</h1>
-          <button className="text-2xl">
+          <button className="text-3xl">
             <MdClose />
           </button>
         </div>
