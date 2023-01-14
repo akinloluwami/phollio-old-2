@@ -9,6 +9,7 @@ import { RiLoader3Fill } from "react-icons/ri";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { BsCheckAll } from "react-icons/bs";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { MdClose } from "react-icons/md";
 
 const Hero = () => {
   const [username, setUsername] = useState("");
@@ -38,16 +39,22 @@ const Hero = () => {
   }, 500);
   return (
     <div className="bg-white h-screen w-screen text-black relative">
-      <div className="lg:hidden absolute bg-white w-screen px-5">
-        <ul className="font-bold text-xl">
-          <li>
+      <div className="lg:hidden absolute bg-white w-screen px-5 py-3 z-[100000000000000]">
+        <ul className="font-bold text-2xl">
+          <li className="my-10 border-b py-5">
             <a href="#">Explore Developers</a>
           </li>
-          <li>
+          <li className="my-10 border-b py-5">
             <a href="#">Features</a>
           </li>
-          <li>
+          <li className="my-10 border-b py-5">
             <a href="#">FAQs</a>
+          </li>
+          <li className="my-10 border-b py-5">
+            <a href="#">Login</a>
+          </li>
+          <li className="my-10 border-b py-5">
+            <a href="#">Sign up</a>
           </li>
         </ul>
       </div>
