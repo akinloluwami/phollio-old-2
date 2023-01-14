@@ -38,7 +38,19 @@ const Hero = () => {
   }, 500);
   return (
     <div className="bg-white h-screen w-screen text-black">
-      <div className="lg:hidden "></div>
+      <div className="lg:hidden">
+        <ul className="font-bold text-xl">
+          <li>
+            <a href="#">Explore Developers</a>
+          </li>
+          <li>
+            <a href="#">Features</a>
+          </li>
+          <li>
+            <a href="#">FAQs</a>
+          </li>
+        </ul>
+      </div>
       <div className="lg:px-20 px-3 flex justify-between py-8 items-center">
         <h1>YouPage</h1>
         <div className="hidden lg:block">
