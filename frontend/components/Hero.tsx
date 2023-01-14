@@ -37,7 +37,7 @@ const Hero = () => {
     checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
   return (
-    <div className="bg-white h-screen w-screen text-black">
+    <div className="bg-white h-screen w-screen text-black relative">
       <div className="lg:hidden">
         <ul className="font-bold text-xl">
           <li>
