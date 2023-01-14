@@ -46,7 +46,7 @@ const Hero = () => {
           !open && "translate-x-[-100%]"
         } `}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center py-5">
           <h1>Phollio</h1>
           <button className="text-3xl" onClick={() => setOpen(false)}>
             <MdClose />
