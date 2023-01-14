@@ -44,7 +44,7 @@ const Hero = () => {
       <div
         className={`lg:hidden absolute bg-white w-screen px-5 py-3 z-[100000000000000] h-screen ${
           !open && "translate-x-[-100%]"
-        } `}
+        }  transition-all `}
       >
         <div className="flex justify-between items-center py-5">
           <h1>Phollio</h1>
