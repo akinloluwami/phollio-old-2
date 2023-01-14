@@ -37,7 +37,7 @@ const Hero = () => {
     setUsername(e.target.value.toLowerCase().trim());
     checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <div className="bg-white h-screen w-screen text-black relative">
@@ -85,7 +85,7 @@ const Hero = () => {
             </li>
           </ul>
         </div>
-        <button className="lg:hidden text-3xl" onChange={() => setOpen(true)}>
+        <button className="lg:hidden text-3xl" onClick={() => setOpen(true)}>
           <HiOutlineMenuAlt4 />
         </button>
         <div className="hidden lg:block">
