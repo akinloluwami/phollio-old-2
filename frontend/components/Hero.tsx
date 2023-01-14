@@ -38,7 +38,7 @@ const Hero = () => {
   }, 500);
   return (
     <div className="bg-white h-screen w-screen text-black relative">
-      <div className="lg:hidden">
+      <div className="lg:hidden absolute">
         <ul className="font-bold text-xl">
           <li>
             <a href="#">Explore Developers</a>
