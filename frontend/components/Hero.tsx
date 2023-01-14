@@ -103,7 +103,6 @@ const Hero = () => {
               disabled={username !== "" && !usernameAvaibable}
             >
               Signup
-              <AiOutlineCaretRight />
             </button>
           </Link>
         </div>
