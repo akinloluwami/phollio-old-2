@@ -40,6 +40,12 @@ const Hero = () => {
   return (
     <div className="bg-white h-screen w-screen text-black relative">
       <div className="lg:hidden absolute bg-white w-screen px-5 py-3 z-[100000000000000]">
+        <div className="flex justify-between items-center">
+          <h1>Phollio</h1>
+          <button>
+            <MdClose />
+          </button>
+        </div>
         <ul className="font-bold text-2xl">
           <li className="my-10 border-b py-5">
             <a href="#">Explore Developers</a>
