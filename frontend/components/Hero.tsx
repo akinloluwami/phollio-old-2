@@ -38,7 +38,7 @@ const Hero = () => {
   }, 500);
   return (
     <div className="bg-white h-screen w-screen text-black">
-      <div className=""></div>
+      <div className="lg:hidden "></div>
       <div className="lg:px-20 px-3 flex justify-between py-8 items-center">
         <h1>YouPage</h1>
         <div className="hidden lg:block">
