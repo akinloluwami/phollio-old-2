@@ -46,7 +46,7 @@ const Hero = () => {
       >
         <div className="flex justify-between items-center">
           <h1>Phollio</h1>
-          <button className="text-3xl">
+          <button className="text-3xl" onClick={() => setOpen(false)}>
             <MdClose />
           </button>
         </div>
