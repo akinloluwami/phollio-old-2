@@ -53,7 +53,7 @@ const Hero = () => {
             </li>
           </ul>
         </div>
-        <button className="lg:hidden">
+        <button className="lg:hidden text-3xl">
           <HiOutlineMenuAlt4 />
         </button>
         <div className="hidden lg:block">
