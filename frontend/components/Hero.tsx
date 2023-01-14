@@ -65,7 +65,7 @@ const Hero = () => {
           <Link href={"/signup"}>
             <button className="bg-black text-white h-12 w-36">
               {" "}
-              <b>Sign up</b>- it's fine
+              <b>Sign up</b> - it's free
             </button>
           </Link>
         </div>
