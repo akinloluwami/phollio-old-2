@@ -37,7 +37,7 @@ const Hero = () => {
     setUsername(e.target.value.toLowerCase().trim());
     checkUsename(e.target.value.toLowerCase().trim());
   }, 500);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="bg-white h-screen w-screen text-black relative">
