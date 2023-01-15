@@ -9,7 +9,7 @@ interface CompTypes {
 
 const AuthTopbar = ({ question, href, hrefText }: CompTypes) => {
   return (
-    <div className="flex justify-between lg:px-20 px-2 py-4">
+    <div className="flex justify-between lg:px-20 px-2 py-4 items-center">
       <Link href={"/"}>
         <h1>YouPage</h1>
       </Link>
