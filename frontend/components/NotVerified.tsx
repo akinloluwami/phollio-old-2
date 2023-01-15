@@ -2,7 +2,7 @@ import React from "react";
 
 const NotVerified = ({ email }: any) => {
   return (
-    <div className="flex items-center justify-center bg-red-100 py-4 gap-3">
+    <div className="flex items-center lg:flex-row flex-col justify-center bg-red-100 py-4 gap-3">
       <p className="text-sm">
         To publish your profile please verify your account by clicking the link
         we’ve sent to your email ({email}).
