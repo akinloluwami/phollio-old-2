@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
+import cloudinary from "cloudinary";
 
 cloudinary.config({
   cloud_name: process.env.CD_NAME,
