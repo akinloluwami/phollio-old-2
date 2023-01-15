@@ -110,7 +110,7 @@ const Signup = () => {
         question="Already have an account?"
       />
       <AuthLayout>
-        <div className="lg:w-1/3 mx-auto pb-4">
+        <div className="lg:w-1/3 w-11/12 mx-auto pb-4">
           {currentStep !== 4 && (
             <h1 className="text-4xl font-bold text-center">Sign up</h1>
           )}
