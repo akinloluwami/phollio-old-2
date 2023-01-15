@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import User from "../../schema/user";
 import jwt from "jsonwebtoken";
+import cloudinaryConfig from "../../config/cloudinary";
 
 const uploadProfilePicture = async (req: Request, res: Response) => {
   try {
@@ -24,7 +25,7 @@ const uploadProfilePicture = async (req: Request, res: Response) => {
         .json({ message: "Please select an image to upload" });
     }
 
-    const result = await cloudinary.v2.uploader.upload(req.file.path);
+    const result = await cloudinaryConfig.uploader.upload(req.file.path);
     user.profilePicture = result.secure_url;
     await user.save();
     return res.status(200).json({
