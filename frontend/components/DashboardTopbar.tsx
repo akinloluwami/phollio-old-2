@@ -12,14 +12,14 @@ const DashboardTopbar = ({ username }: any) => {
         <p>YouPage</p>
       </div>
       <div className="flex items-center gap-10">
-        <Link
+        {/* <Link
           href={"/dashboard/analytics"}
           className="flex items-center gap-1 hover:bg-gray-200 px-2 py-1 transition-colors"
         >
           <IoAnalyticsSharp />
           <p>Analytics</p>
-        </Link>
-        <UserLink />
+        </Link> */}
+        {/* <UserLink /> */}
         {/* <Share /> */}
         <div className="flex items-center gap-2 hover:bg-gray-200 px-2 py-1 transition-colors cursor-pointer">
           <div className="h-10 w-10 rounded-full">
