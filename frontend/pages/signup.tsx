@@ -112,7 +112,9 @@ const Signup = () => {
       <AuthLayout>
         <div className="lg:w-1/3 w-11/12 mx-auto pb-4">
           {currentStep !== 4 && (
-            <h1 className="text-4xl font-bold text-center">Sign up</h1>
+            <h1 className="text-4xl font-bold text-center lg:mt-2 mt-10">
+              Sign up
+            </h1>
           )}
           <div className="w-full mt-7">
             {currentStep === 1 && (
