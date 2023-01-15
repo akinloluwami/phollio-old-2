@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import User from "../../schema/user";
+import jwt from "jsonwebtoken";
 
 const uploadProfilePicture = async (req: Request, res: Response) => {
   try {
@@ -26,12 +27,10 @@ const uploadProfilePicture = async (req: Request, res: Response) => {
     const result = await cloudinary.v2.uploader.upload(req.file.path);
     user.profilePicture = result.secure_url;
     await user.save();
-    return res
-      .status(200)
-      .json({
-        message: "Profile picture uploaded successfully",
-        profilePicture: result.secure_url,
-      });
+    return res.status(200).json({
+      message: "Profile picture uploaded successfully",
+      profilePicture: result.secure_url,
+    });
   } catch (error) {
     return res
       .status(500)
