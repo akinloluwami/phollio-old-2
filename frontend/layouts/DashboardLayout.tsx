@@ -37,7 +37,7 @@ const DashboardLayout = ({ children }: any) => {
     <div>
       <DashboardTopbar username={username} />
       {!isEmailVerified && <NotVerified email={email} />}
-      <div className="flex items-center justify-center  flex-col mx-auto max-w-xl mt-5">
+      <div className="flex items-center justify-center  flex-col mx-auto lg:max-w-xl px-3 mt-5">
         <div className="flex items-center justify-between w-full sticky top-0 bg-white z-50">
           {pages.map((page, _) => (
             <Link
