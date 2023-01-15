@@ -14,7 +14,7 @@ const AuthTopbar = ({ question, href, hrefText }: CompTypes) => {
         <h1>YouPage</h1>
       </Link>
       <div className="flex items-center">
-        <p className="mr-5 font-semibold">{question}</p>
+        <p className="mr-5 font-semibold lg:text-sm text-xs">{question}</p>
         <Link href={`/${href}`}>
           <button className="bg-accent text-white px-7 py-2 font-bold">
             {hrefText}
