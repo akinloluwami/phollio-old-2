@@ -7,7 +7,7 @@ import UserLink from "./UserLink";
 
 const DashboardTopbar = ({ username }: any) => {
   return (
-    <div className="lg:px-20 px-3 py-8 flex items-center justify-between">
+    <div className="lg:px-20 px-3 lg:py-8 py-3 flex items-center justify-between">
       <div className="">
         <p>YouPage</p>
       </div>
