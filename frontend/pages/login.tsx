@@ -39,7 +39,7 @@ const Login = () => {
     <>
       <AuthTopbar href="signup" hrefText="Sign up" question="New to YouPage?" />
       <AuthLayout>
-        <div className="w-1/3 mx-auto">
+        <div className="lg:w-1/3 w-11/12 mx-auto">
           <h1 className="text-4xl font-bold text-center">Login</h1>
           {error && !loading && !success && (
             <p className="text-red-500 text-center my-5">{errorMsg}</p>
