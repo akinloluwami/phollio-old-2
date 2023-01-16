@@ -6,6 +6,7 @@ const Header = () => {
       <center>
         <div className="h-36 w-36 bg-accent rounded-full"></div>
       </center>
+      <h1>Akinkunmi</h1>
     </div>
   );
 };
