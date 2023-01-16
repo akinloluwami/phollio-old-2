@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Tabs = () => {
+  const [currentTab, setCurrentTab] = useState(1);
   const tabs = [
     {
       id: 1,
