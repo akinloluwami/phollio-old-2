@@ -8,13 +8,14 @@ import authRouter from "../src/routes/auth";
 import profileRouter from "../src/routes/profile";
 import linkRouter from "../src/routes/link";
 import projectRouter from "../src/routes/project";
-
+import efu from "express-fileupload";
 connectDB();
 
 const app: Application = express();
 
 app.use(bodyParser());
 app.use(cors());
+app.use(efu());
 // app.use("/images/profiles", express.static("./public/images/profiles"));
 
 app.get("/", (req: Request, res: Response) => {
