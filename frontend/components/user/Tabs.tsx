@@ -18,7 +18,11 @@ const Tabs = () => {
 
   return (
     <div className="w-full mx-auto">
-      <div className="flex items-center justify-center"></div>
+      <div className="flex items-center justify-center">
+        {tabs.map((tab) => (
+          <button>{tab.title}</button>
+        ))}
+      </div>
     </div>
   );
 };
