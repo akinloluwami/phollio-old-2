@@ -21,7 +21,12 @@ const Tabs = () => {
     <div className="w-full mx-auto my-3">
       <div className="flex items-center justify-center gap-4">
         {tabs.map((tab) => (
-          <button className="px-2 text-accent">{tab.title}</button>
+          <button
+            className="px-2 text-accent"
+            onClick={() => setCurrentTab(tab.id)}
+          >
+            {tab.title}
+          </button>
         ))}
       </div>
     </div>
