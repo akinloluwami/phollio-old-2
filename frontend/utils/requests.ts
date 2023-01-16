@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// let defaultUrl: string = "http://localhost:2004";
-let defaultUrl: string = "http://192.168.190.71:2004";
+let defaultUrl: string = "http://localhost:2004";
+// let defaultUrl: string = "http://192.168.190.71:2004";
 
 const postData = async (
   url: string,
