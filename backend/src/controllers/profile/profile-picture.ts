@@ -18,14 +18,19 @@ const uploadProfilePicture = async (req: Request, res: Response) => {
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
+    const file: any = req.file;
 
-    if (!req.file) {
+    if (!file) {
       return res
         .status(400)
         .json({ message: "Please select an image to upload" });
     }
 
-    const result = await cloudinaryConfig.uploader.upload(req.file.path);
+    const result = await cloudinaryConfig.uploader.upload(file.tempFilePath, {
+      folder: "profile-pictures",
+      public_id: `phollio_${user._id}${Date.now()}`,
+      resource_type: "image",
+    });
     user.profilePicture = result.secure_url;
     await user.save();
     return res.status(200).json({
