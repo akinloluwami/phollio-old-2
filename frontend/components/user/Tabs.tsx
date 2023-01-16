@@ -23,7 +23,9 @@ const Tabs = () => {
         {tabs.map((tab) => (
           <button
             className={`px-2 ${
-              tab.id === currentTab ? "text-white" : "text-accent"
+              tab.id === currentTab
+                ? "text-white bg-accent"
+                : "text-accent bg-transparent"
             }`}
             onClick={() => setCurrentTab(tab.id)}
           >
