@@ -17,7 +17,7 @@ const Tabs = () => {
   ];
 
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full mx-auto my-3">
       <div className="flex items-center justify-center gap-4">
         {tabs.map((tab) => (
           <button>{tab.title}</button>
