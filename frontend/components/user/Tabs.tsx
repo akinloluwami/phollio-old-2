@@ -1,7 +1,7 @@
 import React from "react";
 
 const Tabs = () => {
-  return <div>Tabs</div>;
+  return <div className="w-full mx-auto">Tabs</div>;
 };
 
 export default Tabs;
