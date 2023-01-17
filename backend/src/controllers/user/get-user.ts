@@ -39,6 +39,7 @@ const getUser = async (req: Request, res: Response) => {
     bio,
     displayName,
     links,
+    projects,
   };
 
   return res.status(200).json({ data });
