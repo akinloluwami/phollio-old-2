@@ -1,5 +1,3 @@
-import React from "react";
-
 const Project = ({ id, url, title, description }: any) => {
   return (
     <a href={url} className="w-full" target={"_blank"}>
