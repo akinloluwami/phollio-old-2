@@ -45,7 +45,7 @@ const Tabs = ({ projects, links }: TabProps) => {
         {currentTab === 1 ? (
           <Projects />
         ) : currentTab === 2 ? (
-          <Links />
+          <Links links={links} />
         ) : (
           <TechStack />
         )}
