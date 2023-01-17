@@ -17,7 +17,7 @@ const User = ({ data }: any) => {
   return (
     <div className="max-w-2xl mx-auto py-8">
       <Header displayName={data.data.displayName} bio={data.data.bio} />
-      <Tabs />
+      <Tabs projects={data.data.projects} links={data.data.links} />
     </div>
   );
 };
