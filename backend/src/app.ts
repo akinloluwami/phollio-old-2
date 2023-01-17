@@ -8,6 +8,7 @@ import authRouter from "../src/routes/auth";
 import profileRouter from "../src/routes/profile";
 import linkRouter from "../src/routes/link";
 import projectRouter from "../src/routes/project";
+import userRouter from "../src/routes/user";
 import efu from "express-fileupload";
 connectDB();
 
@@ -28,5 +29,5 @@ app.use("/auth", authRouter);
 app.use("/profile", profileRouter);
 app.use("/link", linkRouter);
 app.use("/project", projectRouter);
-
+app.use("/user", userRouter);
 app.listen(2004, () => console.log(`Server is live on http://localhost:2004`));
