@@ -1,15 +1,9 @@
 import React from "react";
 import Link from "../Link";
 
-const Links = () => {
+const Links = ({ link }: any) => {
   return (
     <div>
-      <Link />
-      <Link />
-      <Link />
-      <Link />
-      <Link />
-      <Link />
       <Link />
     </div>
   );
