@@ -27,8 +27,7 @@ const User = ({ data }: any) => {
         <>
           <Head>
             <title>
-              {userData?.displayName || "Phollio"} | {userData?.bio || ""} |
-              Phollio
+              {userData?.displayName} | {userData?.bio || ""} | Phollio
             </title>
           </Head>
           <div className="max-w-2xl mx-auto py-8">
