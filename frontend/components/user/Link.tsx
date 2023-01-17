@@ -1,6 +1,6 @@
 import React from "react";
 
-const Project = () => {
+const Link = () => {
   return (
     <a href="#" className="w-full" target={"_blank"}>
       <div className="bg-slate-200 py-3 my-3 px-3">
@@ -10,4 +10,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Link;
