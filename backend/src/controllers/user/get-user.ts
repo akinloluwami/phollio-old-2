@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import Link from "../../schema/link";
 import User from "../../schema/user";
 
 const getUser = async (req: Request, res: Response) => {
@@ -9,6 +10,20 @@ const getUser = async (req: Request, res: Response) => {
       message: "User not found",
     });
   }
+  if (!UserData.isEmailVerified) {
+    return res.status(400).json({
+      message: "This profile is not yet verified",
+    });
+  }
+  const userId = UserData._id;
+
+  const userLinks = await Link.find({ userId: userId });
+
+  const data = {
+    username: UserData.username,
+  };
+
+  return res.status(200).json({ data });
 };
 
 export default getUser;
