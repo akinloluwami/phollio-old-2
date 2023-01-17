@@ -19,8 +19,10 @@ const getUser = async (req: Request, res: Response) => {
 
   const userLinks = await Link.find({ userId: userId });
 
+  const { username, bio } = UserData;
   const data = {
-    username: UserData.username,
+    username,
+    bio,
   };
 
   return res.status(200).json({ data });
