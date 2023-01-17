@@ -36,7 +36,12 @@ const getUser = async (req: Request, res: Response) => {
   });
 
   userProjects.forEach((project) => {
-    projects.push({ id: project._id, title: project.title, url: project.url });
+    projects.push({
+      id: project._id,
+      title: project.title,
+      url: project.url,
+      description: project.description,
+    });
   });
   const data = {
     username,
