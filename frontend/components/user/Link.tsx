@@ -4,9 +4,7 @@ const Project = () => {
   return (
     <a href="#" className="w-full" target={"_blank"}>
       <div className="bg-slate-200 py-3 my-3 px-3">
-        <h1 className="text-xl">Vibrantt</h1>
-        <p>Color tool for designers and developers</p>
-        <small>vibrantt.co</small>
+        <h1 className="text-xl">Twitter</h1>
       </div>
     </a>
   );
