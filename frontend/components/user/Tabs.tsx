@@ -36,7 +36,7 @@ const Tabs = () => {
           </button>
         ))}
       </div>
-      <div className="">
+      <div className="w-full">
         {currentTab === 1 ? (
           <Projects />
         ) : currentTab === 2 ? (
