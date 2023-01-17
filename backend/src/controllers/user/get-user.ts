@@ -32,7 +32,7 @@ const getUser = async (req: Request, res: Response) => {
   });
 
   userProjects.forEach((project) => {
-    projects.push({ title: project.title, url: project.url });
+    projects.push({ id: project._id, title: project.title, url: project.url });
   });
   const data = {
     username,
