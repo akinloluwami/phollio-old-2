@@ -1,7 +1,7 @@
 import React from "react";
 import Project from "../Project";
 
-const Projects = () => {
+const Projects = ({ projects }: any) => {
   return (
     <div className="w-full">
       <Project />
