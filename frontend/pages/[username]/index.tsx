@@ -1,4 +1,5 @@
 import Head from "next/head";
+import User404 from "../../components/404";
 import Header from "../../components/user/Header";
 import Tabs from "../../components/user/Tabs";
 
@@ -19,7 +20,9 @@ const User = ({ data }: any) => {
   return (
     <>
       {!userData ? (
-        <>404</>
+        <>
+          <User404 />
+        </>
       ) : (
         <>
           <Head>
