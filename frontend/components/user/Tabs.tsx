@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Links from "./tabs/Links";
+import Projects from "./tabs/Projects";
+import TechStack from "./tabs/TechStack";
 
 const Tabs = () => {
   const [currentTab, setCurrentTab] = useState(1);
@@ -18,8 +21,8 @@ const Tabs = () => {
   ];
 
   return (
-    <div className="w-full mx-auto my-3">
-      <div className="flex items-center justify-center gap-4">
+    <div className="w-full mx-auto my-5">
+      <div className="flex items-center justify-center gap-7">
         {tabs.map((tab) => (
           <button
             className={`px-2 ${
@@ -32,6 +35,15 @@ const Tabs = () => {
             {tab.title}
           </button>
         ))}
+      </div>
+      <div className="">
+        {currentTab === 1 ? (
+          <Projects />
+        ) : currentTab === 2 ? (
+          <Links />
+        ) : (
+          <TechStack />
+        )}
       </div>
     </div>
   );
