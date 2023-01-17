@@ -5,6 +5,14 @@ const Projects = () => {
   return (
     <div className="w-full">
       <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
+      <Project />
     </div>
   );
 };
