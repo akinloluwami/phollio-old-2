@@ -11,7 +11,7 @@ const User404 = () => {
       </h1>
       <p className="text-center">
         Want this to be your username?{" "}
-        <a href="#" className="underline">
+        <a href="#" className="underline text-accent">
           Create your Phollio now.
         </a>{" "}
       </p>
