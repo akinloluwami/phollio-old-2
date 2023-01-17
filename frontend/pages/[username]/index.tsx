@@ -14,7 +14,6 @@ export async function getServerSideProps({ query }: any) {
 }
 
 const User = ({ data }: any) => {
-  console.log(data);
   return (
     <div className="max-w-2xl mx-auto py-8">
       <Header displayName={data.data.displayName} bio={data.data.bio} />
