@@ -1,6 +1,7 @@
 import React from "react";
+import HeaderProps from "../../types/header";
 
-const Header = ({ displayName, bio }: any) => {
+const Header = ({ displayName, bio }: HeaderProps) => {
   return (
     <div className="w-full">
       <center>
