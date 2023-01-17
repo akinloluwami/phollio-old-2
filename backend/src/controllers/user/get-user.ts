@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import Link from "../../schema/link";
+import Project from "../../schema/project";
 import User from "../../schema/user";
 
 const getUser = async (req: Request, res: Response) => {
@@ -19,12 +20,19 @@ const getUser = async (req: Request, res: Response) => {
 
   const userLinks = await Link.find({ userId });
 
+  const userProjects = await Project.find({ userId });
+
   const { username, bio, displayName } = UserData;
 
   const links: any = [];
+  const projects: any = [];
 
   userLinks.forEach((link) => {
     links.push({ title: link.title, url: link.url });
+  });
+
+  userProjects.forEach((project) => {
+    projects.push({ title: project.title, url: project.url });
   });
   const data = {
     username,
