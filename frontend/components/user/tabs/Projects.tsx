@@ -3,7 +3,7 @@ import Project from "../Project";
 
 const Projects = () => {
   return (
-    <div>
+    <div className="w-full">
       <Project />
     </div>
   );
