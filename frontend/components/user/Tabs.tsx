@@ -22,10 +22,10 @@ const Tabs = () => {
 
   return (
     <div className="w-full mx-auto my-5">
-      <div className="flex items-center justify-center gap-7">
+      <div className="flex items-center justify-between">
         {tabs.map((tab) => (
           <button
-            className={`px-2 ${
+            className={`px-2 text-lg ${
               tab.id === currentTab
                 ? "text-white bg-accent"
                 : "text-accent bg-transparent"
