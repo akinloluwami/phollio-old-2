@@ -4,15 +4,9 @@ import Project from "../Project";
 const Projects = ({ projects }: any) => {
   return (
     <div className="w-full">
-      <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
+      {projects.map((project: any) => (
+        <Project key={project.id} url={project.url} title={project.title} />
+      ))}
     </div>
   );
 };
