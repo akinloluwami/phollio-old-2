@@ -20,7 +20,7 @@ const getUser = async (req: Request, res: Response) => {
 
   const userLinks = await Link.find({ userId });
 
-  const userProjects = await Project.find({ userId });
+  const userProjects = await Project.find({ userId, isOn: true });
 
   const { username, bio, displayName } = UserData;
 
