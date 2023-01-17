@@ -28,7 +28,7 @@ const getUser = async (req: Request, res: Response) => {
   const projects: any = [];
 
   userLinks.forEach((link) => {
-    links.push({ title: link.title, url: link.url });
+    links.push({ id: link._id, title: link.title, url: link.url });
   });
 
   userProjects.forEach((project) => {
