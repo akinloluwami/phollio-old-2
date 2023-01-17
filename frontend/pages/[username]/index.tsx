@@ -21,6 +21,9 @@ const User = ({ data }: any) => {
     <>
       {!userData ? (
         <>
+          <Head>
+            <title>Not found | Phollio</title>
+          </Head>
           <User404 />
         </>
       ) : (
