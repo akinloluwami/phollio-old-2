@@ -3,7 +3,12 @@ import Links from "./tabs/Links";
 import Projects from "./tabs/Projects";
 import TechStack from "./tabs/TechStack";
 
-const Tabs = () => {
+interface TabProps {
+  projects: [];
+  links: [];
+}
+
+const Tabs = ({ projects, links }: TabProps) => {
   const [currentTab, setCurrentTab] = useState(1);
   const tabs = [
     {
