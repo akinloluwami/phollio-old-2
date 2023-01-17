@@ -43,7 +43,7 @@ const Tabs = ({ projects, links }: TabProps) => {
       </div>
       <div className="w-full">
         {currentTab === 1 ? (
-          <Projects />
+          <Projects projects={projects} />
         ) : currentTab === 2 ? (
           <Links links={links} />
         ) : (
