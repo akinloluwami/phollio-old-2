@@ -17,12 +17,20 @@ const getUser = async (req: Request, res: Response) => {
   //   }
   const userId = UserData._id;
 
-  const userLinks = await Link.find({ userId: userId });
+  const userLinks = await Link.find({ userId });
 
-  const { username, bio } = UserData;
+  const { username, bio, displayName } = UserData;
+
+  const links: any = [];
+
+  userLinks.forEach((link) => {
+    links.push({ title: link.title, url: link.url });
+  });
   const data = {
     username,
     bio,
+    displayName,
+    links,
   };
 
   return res.status(200).json({ data });
