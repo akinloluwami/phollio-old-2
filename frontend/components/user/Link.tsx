@@ -7,7 +7,6 @@ const Link = ({ id, title, url }: any) => {
   const [deviceType, setDeviceType] = useState("");
   const [browser, setBrowser] = useState("");
   const [status, setStatus] = useState("");
-  useEffect(() => {}, []);
 
   const handleClick = () => {
     postData("/link/click", {}, {}).then((data) => console.log(data));
