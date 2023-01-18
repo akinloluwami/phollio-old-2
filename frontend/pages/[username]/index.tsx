@@ -18,7 +18,6 @@ export async function getServerSideProps({ query }: any) {
 
 const User = ({ data }: any) => {
   const userData = data.data;
-  console.log(data);
   return (
     <>
       {data.message === "User not found" && (
