@@ -3,6 +3,7 @@ import User404 from "../../components/404";
 import Header from "../../components/user/Header";
 import Tabs from "../../components/user/Tabs";
 import UserNotVerified from "../../components/UserNotVerified";
+import { VisitorProvider } from "../../contexts/visitorContext";
 
 export async function getServerSideProps({ query }: any) {
   const { username } = query;
@@ -40,15 +41,17 @@ const User = ({ data }: any) => {
 
       {userData && (
         <>
-          <Head>
-            <title>
-              {userData?.displayName} | {userData?.bio} | Phollio
-            </title>
-          </Head>
-          <div className="max-w-2xl mx-auto py-8">
-            <Header displayName={userData.displayName} bio={userData.bio} />
-            <Tabs projects={userData?.projects} links={userData?.links} />
-          </div>
+          <VisitorProvider>
+            <Head>
+              <title>
+                {userData?.displayName} | {userData?.bio} | Phollio
+              </title>
+            </Head>
+            <div className="max-w-2xl mx-auto py-8">
+              <Header displayName={userData.displayName} bio={userData.bio} />
+              <Tabs projects={userData?.projects} links={userData?.links} />
+            </div>
+          </VisitorProvider>
         </>
       )}
     </>
