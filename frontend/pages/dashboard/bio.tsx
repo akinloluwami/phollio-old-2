@@ -74,7 +74,7 @@ const Bio = () => {
             placeholder="Username"
             className="w-full h-10 pl-3 border-[1px] bg-gray-50"
             value={usernameSt}
-            onChange={(e) => setUsernameSt(e.target.value)}
+            onChange={(e) => setUsernameSt(e.target.value.trim().toLowerCase())}
           />
         </div>
         <div className="my-2">
