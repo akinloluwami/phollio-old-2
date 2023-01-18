@@ -22,7 +22,7 @@ const User = ({ data }: any) => {
       {!userData ? (
         <>
           <Head>
-            <title>Not found | Phollio</title>
+            <title>Page Not found | Phollio</title>
           </Head>
           <User404 />
         </>
@@ -30,7 +30,7 @@ const User = ({ data }: any) => {
         <>
           <Head>
             <title>
-              {userData?.displayName} | {userData?.bio || ""} | Phollio
+              {userData?.displayName} | {userData?.bio} | Phollio
             </title>
           </Head>
           <div className="max-w-2xl mx-auto py-8">
