@@ -1,15 +1,17 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import useDeviceType from "./useDeviceType";
 
 interface VisitorContext {
   ipAddress: string;
   userAgent: string;
+  deviceType: string;
 }
 
 const VisitorContext = createContext<VisitorContext | null>(null);
 
 const VisitorProvider = ({ children }: any) => {
   const [ipAddress, setIpAddress] = useState("");
-  const [deviceType, setDeviceType] = useState("");
+  const deviceType = useDeviceType();
   const [browser, setBrowser] = useState("");
   const [status, setStatus] = useState("");
   const [userAgent, setUserAgent] = useState("");
@@ -20,12 +22,12 @@ const VisitorProvider = ({ children }: any) => {
       setIpAddress(data.ip);
     };
     fetchData();
-
+    console.log(deviceType);
     setUserAgent(navigator.userAgent);
   }, []);
 
   return (
-    <VisitorContext.Provider value={{ ipAddress, userAgent }}>
+    <VisitorContext.Provider value={{ ipAddress, userAgent, deviceType }}>
       {children}
     </VisitorContext.Provider>
   );
