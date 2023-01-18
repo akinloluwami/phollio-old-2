@@ -11,11 +11,11 @@ const getUser = async (req: Request, res: Response) => {
       message: "User not found",
     });
   }
-  //   if (!UserData.isEmailVerified) {
-  //     return res.status(400).json({
-  //       message: "This profile is not yet verified",
-  //     });
-  //   }
+  if (!UserData.isEmailVerified) {
+    return res.status(400).json({
+      message: "This profile is not yet verified",
+    });
+  }
   const userId = UserData._id;
 
   const userLinks = await Link.find({ userId, isOn: true, isDeleted: false });
