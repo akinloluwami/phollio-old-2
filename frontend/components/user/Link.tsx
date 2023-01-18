@@ -1,5 +1,3 @@
-import React from "react";
-
 const Link = ({ title, url }: any) => {
   const linkUrl = url.includes("http://") ? url : `https://${url}`;
   return (
