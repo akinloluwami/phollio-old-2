@@ -1,6 +1,8 @@
+import { useVisitor } from "../../contexts/visitorContext";
 import { postData } from "../../utils/requests";
 
 const Link = ({ id, title, url }: any) => {
+  const { ipAddress } = useVisitor();
   const handleClick = () => {
     postData("/link/click", {}, {}).then((data) => console.log(data));
   };
