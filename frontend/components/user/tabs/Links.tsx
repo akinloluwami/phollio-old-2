@@ -1,8 +1,6 @@
 import Link from "../Link";
 
 const Links = ({ links }: any) => {
-  console.log(navigator);
-
   return (
     <div>
       {links.map((link: any) => (
