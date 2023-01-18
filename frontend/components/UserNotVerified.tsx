@@ -7,7 +7,7 @@ const UserNotVerified = () => {
         <div className="h-32 w-32 bg-accent rounded-full"></div>
       </center>
       <h1 className="text-center text-2xl my-10">
-        This profile is not yet verified, please check back later.
+        This profile is not yet verified. Please check back later.
       </h1>
     </div>
   );
