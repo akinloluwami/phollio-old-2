@@ -21,6 +21,9 @@ const linkClickSchema = new Schema({
   linkId: {
     type: String,
   },
+  visitedAccountId: {
+    type: String,
+  },
 });
 
 const LinkClick = mongoose.model("LinkClick", linkClickSchema);
