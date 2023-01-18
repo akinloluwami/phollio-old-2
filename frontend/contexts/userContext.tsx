@@ -40,8 +40,10 @@ const UserProvider = ({ children }: any) => {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("tkn");
-    setToken(token as string);
+    if (router.route.includes("dashbaord")) {
+      const token = localStorage.getItem("tkn");
+      setToken(token as string);
+    }
   }, []);
 
   useEffect(() => {
