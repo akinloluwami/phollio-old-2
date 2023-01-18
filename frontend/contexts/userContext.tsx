@@ -1,5 +1,6 @@
 import { createContext, FC, useContext, useEffect, useState } from "react";
 import { fetchData } from "../utils/requests";
+import { useRouter } from "next/router";
 
 interface UserContext {
   username: string;
@@ -13,6 +14,8 @@ interface UserContext {
 const UserContext = createContext<UserContext | null>(null);
 
 const UserProvider = ({ children }: any) => {
+  const router = useRouter();
+
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [isEmailVerified, setIsEmailVerified] = useState(true);
@@ -42,7 +45,9 @@ const UserProvider = ({ children }: any) => {
   }, []);
 
   useEffect(() => {
-    getBasicInfo();
+    if (router.route.includes("dashbaord")) {
+      getBasicInfo();
+    }
   }, [token]);
 
   return (
