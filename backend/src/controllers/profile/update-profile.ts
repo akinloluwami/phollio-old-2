@@ -30,7 +30,16 @@ const updateProfile = async (req: Request, res: Response) => {
       });
     }
 
-    user.username = username;
+    const userNameExist = await User.User.find({ username });
+
+    if (
+      userNameExist.length > 0 &&
+      userNameExist[0].username !== user.username
+    ) {
+      return res.status(400).json({ message: "Username is already taken" });
+    }
+
+    user.username = username.trim().toLowerCase();
     user.displayName = displayName;
     user.bio = bio;
 
