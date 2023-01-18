@@ -22,7 +22,6 @@ const VisitorProvider = ({ children }: any) => {
       setIpAddress(data.ip);
     };
     fetchData();
-    console.log(deviceType);
     setUserAgent(navigator.userAgent);
   }, []);
 
