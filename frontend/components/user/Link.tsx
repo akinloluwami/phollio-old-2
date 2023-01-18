@@ -1,4 +1,4 @@
-const Link = ({ title, url }: any) => {
+const Link = ({ id, title, url }: any) => {
   const linkUrl = url.includes("http://") ? url : `https://${url}`;
   return (
     <a href={linkUrl} className="w-full" target={"_blank"}>
