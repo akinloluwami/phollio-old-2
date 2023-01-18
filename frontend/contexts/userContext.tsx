@@ -40,17 +40,15 @@ const UserProvider = ({ children }: any) => {
   };
 
   useEffect(() => {
-    if (router.route.includes("dashbaord")) {
-      const token = localStorage.getItem("tkn");
-      setToken(token as string);
-    }
+    const token = localStorage.getItem("tkn");
+    setToken(token as string);
   }, []);
 
   useEffect(() => {
-    if (router.route.includes("dashbaord")) {
+    if (router.pathname.includes("/dashboard")) {
       getBasicInfo();
     }
-  }, [token]);
+  }, [token, router.pathname]);
 
   return (
     <UserContext.Provider

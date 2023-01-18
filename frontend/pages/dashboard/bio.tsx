@@ -20,6 +20,12 @@ const Bio = () => {
     setDisplayNameSt(displayName);
     setUsernameSt(username);
     setBioSt(bio);
+
+    console.log({
+      displayName,
+      username,
+      bio,
+    });
   }, [displayName, username, bio]);
 
   const handleUpdate = () => {
