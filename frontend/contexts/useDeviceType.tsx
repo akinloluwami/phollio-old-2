@@ -5,26 +5,21 @@ const useDeviceType = () => {
 
   useEffect(() => {
     const detectDeviceType = () => {
-      const userAgent = navigator.userAgent;
-      if (
-        userAgent.match(/Android/i) ||
-        userAgent.match(/webOS/i) ||
-        userAgent.match(/iPhone/i) ||
-        userAgent.match(/iPad/i) ||
-        userAgent.match(/iPod/i) ||
-        userAgent.match(/BlackBerry/i) ||
-        userAgent.match(/Windows Phone/i)
-      ) {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      if (width < 768) {
         setDeviceType("mobile");
-      } else if (userAgent.match(/Tablet/i)) {
+      } else if (width >= 768 && width <= 1024) {
         setDeviceType("tablet");
-      } else if (userAgent.match(/Desktop/i)) {
+      } else if (width > 1024) {
         setDeviceType("desktop");
       } else {
         setDeviceType("other");
       }
     };
     detectDeviceType();
+    window.addEventListener("resize", detectDeviceType);
+    return () => window.removeEventListener("resize", detectDeviceType);
   }, []);
 
   return deviceType;
