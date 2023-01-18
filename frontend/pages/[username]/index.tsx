@@ -2,6 +2,7 @@ import Head from "next/head";
 import User404 from "../../components/404";
 import Header from "../../components/user/Header";
 import Tabs from "../../components/user/Tabs";
+import UserNotVerified from "../../components/UserNotVerified";
 
 export async function getServerSideProps({ query }: any) {
   const { username } = query;
@@ -17,16 +18,28 @@ export async function getServerSideProps({ query }: any) {
 
 const User = ({ data }: any) => {
   const userData = data.data;
+  console.log(data);
   return (
     <>
-      {!userData ? (
+      {data.message === "User not found" && (
         <>
           <Head>
             <title>Page Not found | Phollio</title>
           </Head>
           <User404 />
         </>
-      ) : (
+      )}
+
+      {data.message === "This profile is not yet verified" && (
+        <>
+          <Head>
+            <title>Phollio</title>
+          </Head>
+          <UserNotVerified />
+        </>
+      )}
+
+      {userData && (
         <>
           <Head>
             <title>
