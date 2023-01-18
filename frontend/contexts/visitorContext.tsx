@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 interface VisitorContext {
   ipAddress: string;
+  userAgent: string;
 }
 
 const VisitorContext = createContext<VisitorContext | null>(null);
@@ -11,7 +12,7 @@ const VisitorProvider = ({ children }: any) => {
   const [deviceType, setDeviceType] = useState("");
   const [browser, setBrowser] = useState("");
   const [status, setStatus] = useState("");
-
+  const [userAgent, setUserAgent] = useState("");
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch("https://api.ipify.org?format=json");
@@ -19,10 +20,12 @@ const VisitorProvider = ({ children }: any) => {
       setIpAddress(data.ip);
     };
     fetchData();
+
+    setUserAgent(navigator.userAgent);
   }, []);
 
   return (
-    <VisitorContext.Provider value={{ ipAddress }}>
+    <VisitorContext.Provider value={{ ipAddress, userAgent }}>
       {children}
     </VisitorContext.Provider>
   );
