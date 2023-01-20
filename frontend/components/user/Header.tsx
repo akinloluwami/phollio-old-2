@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import { useVisitor } from "../../contexts/visitorContext";
 import HeaderProps from "../../types/header";
 
 const Header = ({ displayName, bio, userId }: HeaderProps) => {
+  const { ipAddress, userAgent, deviceType, browser, os, fullDeviceInfo } =
+    useVisitor();
   const handleImpression = () => {
     console.log(true);
   };
