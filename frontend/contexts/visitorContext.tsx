@@ -13,7 +13,7 @@ const VisitorContext = createContext<VisitorContext | null>(null);
 
 const VisitorProvider = ({ children }: any) => {
   const [ipAddress, setIpAddress] = useState("");
-  const deviceType = useDeviceType();
+  const [deviceType, setDeviceType] = useState("");
   const [browser, setBrowser] = useState("");
   const [status, setStatus] = useState("");
   const [userAgent, setUserAgent] = useState("");
@@ -29,6 +29,7 @@ const VisitorProvider = ({ children }: any) => {
     setUserAgent(userAgent);
     const device = deviceDetector.parse(userAgent);
     setBrowser(device.client?.name || "");
+    setDeviceType(device.device?.type || "");
   }, []);
 
   return (
