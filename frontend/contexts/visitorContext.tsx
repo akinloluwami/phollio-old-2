@@ -28,6 +28,7 @@ const VisitorProvider = ({ children }: any) => {
     const userAgent = navigator.userAgent;
     setUserAgent(userAgent);
     const device = deviceDetector.parse(userAgent);
+    setBrowser(device.client?.name || "");
   }, []);
 
   return (
