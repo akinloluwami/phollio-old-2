@@ -48,7 +48,11 @@ const User = ({ data }: any) => {
               </title>
             </Head>
             <div className="max-w-2xl mx-auto py-8">
-              <Header displayName={userData.displayName} bio={userData.bio} />
+              <Header
+                displayName={userData.displayName}
+                bio={userData.bio}
+                userId={userData.userId}
+              />
               <Tabs projects={userData?.projects} links={userData?.links} />
             </div>
           </VisitorProvider>
