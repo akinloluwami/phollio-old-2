@@ -7,6 +7,15 @@ const Header = ({ displayName, bio, userId }: HeaderProps) => {
     useVisitor();
   const handleImpression = () => {
     console.log(true);
+    const payload = {
+      ipAddress,
+      userAgent,
+      deviceType,
+      browser,
+      os,
+      fullDeviceInfo,
+      userId,
+    };
   };
   useEffect(() => {
     handleImpression();
