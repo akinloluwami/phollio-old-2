@@ -570,6 +570,11 @@
     "defined" "^1.0.0"
     "minimist" "^1.2.6"
 
+"device-detector-js@^3.0.3":
+  "integrity" "sha512-jM89LJAvP6uOd84at8OlD9dWP8KeYCCHUde0RT0HQo/stdoRH4b54Xl/fntx2nEXCmqiFhmo+/cJetS2VGUHPw=="
+  "resolved" "https://registry.npmjs.org/device-detector-js/-/device-detector-js-3.0.3.tgz"
+  "version" "3.0.3"
+
 "didyoumean@^1.2.2":
   "integrity" "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw=="
   "resolved" "https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz"
