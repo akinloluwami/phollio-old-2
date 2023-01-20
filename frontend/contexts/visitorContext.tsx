@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import useDeviceType from "./useDeviceType";
-import { browserName } from "react-device-detect";
+import DeviceDetector from "device-detector-js";
 
 interface VisitorContext {
   ipAddress: string;
@@ -24,8 +24,10 @@ const VisitorProvider = ({ children }: any) => {
       setIpAddress(data.ip);
     };
     fetchData();
-    setBrowser(browserName || "Unknown");
-    setUserAgent(navigator.userAgent);
+    const deviceDetector = new DeviceDetector();
+    const userAgent = navigator.userAgent;
+    setUserAgent(userAgent);
+    const device = deviceDetector.parse(userAgent);
   }, []);
 
   return (
