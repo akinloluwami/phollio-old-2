@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import useDeviceType from "./useDeviceType";
 import DeviceDetector from "device-detector-js";
 
 interface VisitorContext {
