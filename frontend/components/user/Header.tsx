@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import HeaderProps from "../../types/header";
 
-const Header = ({ displayName, bio }: HeaderProps) => {
+const Header = ({ displayName, bio, userId }: HeaderProps) => {
+  const handleImpression = () => {
+    console.log(true);
+  };
+  useEffect(() => {
+    handleImpression();
+  }, []);
   return (
     <div className="w-full">
       <center>
