@@ -6,6 +6,7 @@ interface VisitorContext {
   ipAddress: string;
   userAgent: string;
   deviceType: string;
+  browser: string;
 }
 
 const VisitorContext = createContext<VisitorContext | null>(null);
@@ -28,7 +29,9 @@ const VisitorProvider = ({ children }: any) => {
   }, []);
 
   return (
-    <VisitorContext.Provider value={{ ipAddress, userAgent, deviceType }}>
+    <VisitorContext.Provider
+      value={{ ipAddress, userAgent, deviceType, browser }}
+    >
       {children}
     </VisitorContext.Provider>
   );
