@@ -4,6 +4,7 @@ import Header from "../../components/user/Header";
 import Tabs from "../../components/user/Tabs";
 import UserNotVerified from "../../components/UserNotVerified";
 import { VisitorProvider } from "../../contexts/visitorContext";
+import Imp from "../../utils/Imp";
 
 export async function getServerSideProps({ query }: any) {
   const { username } = query;
@@ -42,6 +43,8 @@ const User = ({ data }: any) => {
       {userData && (
         <>
           <VisitorProvider>
+            <Imp userId={userData.userId} />
+
             <Head>
               <title>
                 {userData?.displayName} | {userData?.bio} | Phollio

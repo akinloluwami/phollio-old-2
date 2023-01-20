@@ -1,25 +1,9 @@
 import { useEffect } from "react";
 import { useVisitor } from "../../contexts/visitorContext";
 import HeaderProps from "../../types/header";
+import { postData } from "../../utils/requests";
 
 const Header = ({ displayName, bio, userId }: HeaderProps) => {
-  const { ipAddress, userAgent, deviceType, browser, os, fullDeviceInfo } =
-    useVisitor();
-  const handleImpression = () => {
-    console.log(true);
-    const payload = {
-      ipAddress,
-      userAgent,
-      deviceType,
-      browser,
-      os,
-      fullDeviceInfo,
-      userId,
-    };
-  };
-  useEffect(() => {
-    handleImpression();
-  }, []);
   return (
     <div className="w-full">
       <center>

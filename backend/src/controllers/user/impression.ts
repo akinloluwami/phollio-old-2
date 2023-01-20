@@ -22,7 +22,10 @@ const userImpression = async (req: Request, res: Response) => {
     userId,
   });
 
-  await newImpression.save();
+  setTimeout(async () => {
+    await newImpression.save();
+  }, 1000);
+  return res.status(200).json({ newImpression });
 };
 
 export default userImpression;
