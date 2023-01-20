@@ -44,6 +44,7 @@ const getUser = async (req: Request, res: Response) => {
     });
   });
   const data = {
+    userId,
     username,
     bio,
     displayName,
